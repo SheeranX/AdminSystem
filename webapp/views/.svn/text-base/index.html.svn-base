@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登陆</title>
+    <link rel="stylesheet" href="../content/css/index.css">
+    <link rel="stylesheet" href="../common/tools/layui/css/layui.css">
+</head>
+<body class="bg">
+    <h1 class="login-title font24">
+        福建土楼风景名胜区•电子票务系统
+    </h1>
+    <div style="height:500px">
+        <div class="use-login">
+            <p>用户登录</p>
+            <div class="login-fill">
+                    <div  class="login-usename " >
+                            <img src="../common/images/web-1.0_06.png">
+                                <input type="text" placeholder="请输入用户名"  class="login-input">
+                        </div>
+                    <div class="login-password">
+                            <img src="../common/images/web-1.0_08.png" >
+                            <input type="text"  placeholder="请输入密码" class="login-input">
+                    </div>
+                    <div class="login-yzm">
+                            <img src="../common/images/web_03.png" >
+                            <input type="text"  placeholder="请输入图片验证码" class="login-input img-yzm">
+                            <img src="../common/images/yzm.jpg" class="yzm" >
+                    </div>
+            </div>
+          
+        <div class="check-psd clearfix">
+                <div class="rempassword">
+                        <input type="checkbox">下次自动登录
+                      </div>
+                <div class="fgpassword">
+                    <a href="###">忘记密码？</a>
+                </div>
+        </div>
+        <div class="login-btn">登录</div>
+    </div>
+    </div>
+  
+<div class="copyright">
+上海大漠电子科技股份有限公司版权所有
+</div>
+</body>
+</html>

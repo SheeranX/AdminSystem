@@ -1,0 +1,4 @@
+body .clientAdd-popup .clientAdd-location .layui-form-item .layui-input-inline{
+    margin-right: 0px;
+  }
+  
