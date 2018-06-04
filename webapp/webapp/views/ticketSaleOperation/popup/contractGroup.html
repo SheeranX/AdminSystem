@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="stylesheet" href="../../../common/tools/ligerui/lib/ligerUI/skins/Aqua/css/ligerui-all.css"> -->
+    <link rel="stylesheet" href="../../../common/tools//ligerui/lib/ligerUI/skins/Aqua/css/ligerui-all.css">
+    <link rel="stylesheet" href="../../../common/tools/layui/css/layui.css">
+    <link rel="stylesheet" href="../../../common/global.css">
+    <link rel="stylesheet" href="../../../content/css/layout.css">
+    <link rel="stylesheet" href="../../../content/css/contractGroup.css">
+    <title>权限分配</title>
+</head>
+
+<body>
+    <div class="contractGroup layui-fluid">
+        <!-- <div class="layui-row"> -->
+        <div class="layui-row">
+            <div class="layui-col-md5 layui-col-sm5  layui-col-xs5 ">
+                <div class="layui-use-item">
+                    <!-- <div class="layui-form-title">未出库票断信息</div> -->
+                    <form class="layui-form" action="" style="margin-left: -18px;">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">发票代码:</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="title" required lay-verify="required" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item layui-form-btn">
+                            <button class="layui-btn">
+                                查询
+                            </button>
+                        </div>
+
+                    </form>
+                    <div class="layuy-title" style="display: inline-block;margin-left: -253px;margin-bottom:10px">
+                        待选客户：
+                    </div>
+                    <div id="maingrid">
+
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+                <div class="layui-charge">
+                    <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+                        <div class="layui-btn layui-btn-xs btn-left">
+                            <i class="layui-icon layui-icon-right"></i>
+                        </div>
+                    </div>
+                    <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+                        <div class="layui-btn layui-btn-xs btn-right">
+                            <i class="layui-icon layui-icon-left"></i>
+                        </div>
+                    </div>
+                    <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+                        <div class="layui-outof">
+                            <button class="layui-btn" id='submit'>出库</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md5 layui-col-sm5 layui-col-xs5">
+                <div class="lsyui-use-edit">
+
+                    <div class="layuy-title" style="margin-top: 40px">
+                        以选客户:
+                    </div>
+                    <div id="maingrid1">
+
+                    </div>
+
+                    <div class="layui-form-foot">
+                        <div class="layui-use-lp">
+                            分组名称:
+                        </div>
+                        <form class="layui-form" action="">
+                            <div class="layui-form-item">
+                                <select name="city" lay-verify="">
+                                    <option value="010">北京</option>
+                                    <option value="021">上海</option>
+                                    <option value="0571">杭州</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 出库 -->
+
+
+    </div>
+    <script src="../../../common/tools/ligerui/lib/jquery/jquery-1.9.0.min.js"></script>
+    <script src="../../../common/tools/layui/layui.all.js"></script>
+    <script src="../../../common/tools/ligerui/lib/ligerUI/js/core/base.js"></script>
+    <script src="../../../common/tools/ligerui/lib/ligerUI/js/plugins/ligerGrid.js"></script>
+    <script src="../../../common/tools/ligerui/lib/ligerUI/js/plugins/ligerDrag.js"></script>
+</body>
+
+</html>
+<script>
+    $(function () {
+        var ajaxReturn;
+        var layer = layui.layer;
+        //original table data from server side JSON format 
+        var ajaxData = [{ "CustomerID": "ALFKI", "CompanyName": "Alfreds Futterkiste", "ContactName": "Maria Anders", "ContactTitle": "Sales Representative", "Address": "Obere Str. 57", "City": "Berlin", "Region": null, "PostalCode": "12209", "Country": "Germany", "Phone": "030-0074321", "Fax": "030-0076545" }, { "CustomerID": "ANATR", "CompanyName": "Ana Trujillo Emparedados y helados", "ContactName": "Ana Trujillo", "ContactTitle": "Owner", "Address": "Avda. de la Constitución 2222", "City": "México D.F.", "Region": null, "PostalCode": "05021", "Country": "Mexico", "Phone": "(5) 555-4729", "Fax": "(5) 555-3745" }, { "CustomerID": "ANTON", "CompanyName": "Antonio Moreno Taquería", "ContactName": "Antonio Moreno", "ContactTitle": "Owner", "Address": "Mataderos  2312", "City": "México D.F.", "Region": null, "PostalCode": "05023", "Country": "Mexico", "Phone": "(5) 555-3932", "Fax": null }, { "CustomerID": "AROUT", "CompanyName": "Around the Horn", "ContactName": "Thomas Hardy", "ContactTitle": "Sales Representative", "Address": "120 Hanover Sq.", "City": "London", "Region": null, "PostalCode": "WA1 1DP", "Country": "UK", "Phone": "(171) 555-7788", "Fax": "(171) 555-6750" }, { "CustomerID": "BERGS", "CompanyName": "Berglunds snabbköp", "ContactName": "Christina Berglund", "ContactTitle": "Order Administrator", "Address": "Berguvsvägen  8", "City": "Luleå", "Region": null, "PostalCode": "S-958 22", "Country": "Sweden", "Phone": "0921-12 34 65", "Fax": "0921-12 34 67" }, { "CustomerID": "BLAUS", "CompanyName": "Blauer See Delikatessen", "ContactName": "Hanna Moos", "ContactTitle": "Sales Representative", "Address": "Forsterstr. 57", "City": "Mannheim", "Region": null, "PostalCode": "68306", "Country": "Germany", "Phone": "0621-08460", "Fax": "0621-08924" }, { "CustomerID": "BLONP", "CompanyName": "Blondel père et fils", "ContactName": "Frédérique Citeaux", "ContactTitle": "Marketing Manager", "Address": "24, place Kléber", "City": "Strasbourg", "Region": null, "PostalCode": "67000", "Country": "France", "Phone": "88.60.15.31", "Fax": "88.60.15.32" }, { "CustomerID": "BOLID", "CompanyName": "Bólido Comidas preparadas", "ContactName": "Martín Sommer", "ContactTitle": "Owner", "Address": "C/ Araquil, 67", "City": "Madrid", "Region": null, "PostalCode": "28023", "Country": "Spain", "Phone": "(91) 555 22 82", "Fax": "(91) 555 91 99" }, { "CustomerID": "BONAP", "CompanyName": "Bon app'", "ContactName": "Laurence Lebihan", "ContactTitle": "Owner", "Address": "12, rue des Bouchers", "City": "Marseille", "Region": null, "PostalCode": "13008", "Country": "France", "Phone": "91.24.45.40", "Fax": "91.24.45.41" }, { "CustomerID": "BOTTM", "CompanyName": "Bottom-Dollar Markets", "ContactName": "Elizabeth Lincoln", "ContactTitle": "Accounting Manager", "Address": "23 Tsawassen Blvd.", "City": "Tsawwassen", "Region": "BC", "PostalCode": "T2F 8M4", "Country": "Canada", "Phone": "(604) 555-4729", "Fax": "(604) 555-3745" }, { "CustomerID": "BSBEV", "CompanyName": "B's Beverages", "ContactName": "Victoria Ashworth", "ContactTitle": "Sales Representative", "Address": "Fauntleroy Circus", "City": "London", "Region": null, "PostalCode": "EC2 5NT", "Country": "UK", "Phone": "(171) 555-1212", "Fax": null }, { "CustomerID": "CACTU", "CompanyName": "Cactus Comidas para llevar", "ContactName": "Patricio Simpson", "ContactTitle": "Sales Agent", "Address": "Cerrito 333", "City": "Buenos Aires", "Region": null, "PostalCode": "1010", "Country": "Argentina", "Phone": "(1) 135-5555", "Fax": "(1) 135-4892" }, { "CustomerID": "CENTC", "CompanyName": "Centro comercial Moctezuma", "ContactName": "Francisco Chang", "ContactTitle": "Marketing Manager", "Address": "Sierras de Granada 9993", "City": "México D.F.", "Region": null, "PostalCode": "05022", "Country": "Mexico", "Phone": "(5) 555-3392", "Fax": "(5) 555-7293" }, { "CustomerID": "CHOPS", "CompanyName": "Chop-suey Chinese", "ContactName": "Yang Wang", "ContactTitle": "Owner", "Address": "Hauptstr. 29", "City": "Bern", "Region": null, "PostalCode": "3012", "Country": "Switzerland", "Phone": "0452-076545", "Fax": null }, { "CustomerID": "COMMI", "CompanyName": "Comércio Mineiro", "ContactName": "Pedro Afonso", "ContactTitle": "Sales Associate", "Address": "Av. dos Lusíadas, 23", "City": "São Paulo", "Region": "SP", "PostalCode": "05432-043", "Country": "Brazil", "Phone": "(11) 555-7647", "Fax": null }, { "CustomerID": "CONSH", "CompanyName": "Consolidated Holdings", "ContactName": "Elizabeth Brown", "ContactTitle": "Sales Representative", "Address": "Berkeley Gardens\r\n12  Brewery ", "City": "London", "Region": null, "PostalCode": "WX1 6LT", "Country": "UK", "Phone": "(171) 555-2282", "Fax": "(171) 555-9199" }, { "CustomerID": "DRACD", "CompanyName": "Drachenblut Delikatessen", "ContactName": "Sven Ottlieb", "ContactTitle": "Order Administrator", "Address": "Walserweg 21", "City": "Aachen", "Region": null, "PostalCode": "52066", "Country": "Germany", "Phone": "0241-039123", "Fax": "0241-059428" }, { "CustomerID": "DUMON", "CompanyName": "Du monde entier", "ContactName": "Janine Labrune", "ContactTitle": "Owner", "Address": "67, rue des Cinquante Otages", "City": "Nantes", "Region": null, "PostalCode": "44000", "Country": "France", "Phone": "40.67.88.88", "Fax": "40.67.89.89" }, { "CustomerID": "EASTC", "CompanyName": "Eastern Connection", "ContactName": "Ann Devon", "ContactTitle": "Sales Agent", "Address": "35 King George", "City": "London", "Region": null, "PostalCode": "WX3 6FW", "Country": "UK", "Phone": "(171) 555-0297", "Fax": "(171) 555-3373" }, { "CustomerID": "ERNSH", "CompanyName": "Ernst Handel", "ContactName": "Roland Mendel", "ContactTitle": "Sales Manager", "Address": "Kirchgasse 6", "City": "Graz", "Region": null, "PostalCode": "8010", "Country": "Austria", "Phone": "7675-3425", "Fax": "7675-3426" }, { "CustomerID": "FAMIA", "CompanyName": "Familia Arquibaldo", "ContactName": "Aria Cruz", "ContactTitle": "Marketing Assistant", "Address": "Rua Orós, 92", "City": "São Paulo", "Region": "SP", "PostalCode": "05442-030", "Country": "Brazil", "Phone": "(11) 555-9857", "Fax": null }, { "CustomerID": "FISSA", "CompanyName": "FISSA Fabrica Inter. Salchichas S.A.", "ContactName": "Diego Roel", "ContactTitle": "Accounting Manager", "Address": "C/ Moralzarzal, 86", "City": "Madrid", "Region": null, "PostalCode": "28034", "Country": "Spain", "Phone": "(91) 555 94 44", "Fax": "(91) 555 55 93" }, { "CustomerID": "FOLIG", "CompanyName": "Folies gourmandes", "ContactName": "Martine Rancé", "ContactTitle": "Assistant Sales Agent", "Address": "184, chaussée de Tournai", "City": "Lille", "Region": null, "PostalCode": "59000", "Country": "France", "Phone": "20.16.10.16", "Fax": "20.16.10.17" }, { "CustomerID": "FOLKO", "CompanyName": "Folk och fä HB", "ContactName": "Maria Larsson", "ContactTitle": "Owner", "Address": "Åkergatan 24", "City": "Bräcke", "Region": null, "PostalCode": "S-844 67", "Country": "Sweden", "Phone": "0695-34 67 21", "Fax": null }, { "CustomerID": "FRANK", "CompanyName": "Frankenversand", "ContactName": "Peter Franken", "ContactTitle": "Marketing Manager", "Address": "Berliner Platz 43", "City": "München", "Region": null, "PostalCode": "80805", "Country": "Germany", "Phone": "089-0877310", "Fax": "089-0877451" }, { "CustomerID": "FRANR", "CompanyName": "France restauration", "ContactName": "Carine Schmitt", "ContactTitle": "Marketing Manager", "Address": "54, rue Royale", "City": "Nantes", "Region": null, "PostalCode": "44000", "Country": "France", "Phone": "40.32.21.21", "Fax": "40.32.21.20" }, { "CustomerID": "FRANS", "CompanyName": "Franchi S.p.A.", "ContactName": "Paolo Accorti", "ContactTitle": "Sales Representative", "Address": "Via Monte Bianco 34", "City": "Torino", "Region": null, "PostalCode": "10100", "Country": "Italy", "Phone": "011-4988260", "Fax": "011-4988261" }, { "CustomerID": "FURIB", "CompanyName": "Furia Bacalhau e Frutos do Mar", "ContactName": "Lino Rodriguez ", "ContactTitle": "Sales Manager", "Address": "Jardim das rosas n. 32", "City": "Lisboa", "Region": null, "PostalCode": "1675", "Country": "Portugal", "Phone": "(1) 354-2534", "Fax": "(1) 354-2535" }, { "CustomerID": "GALED", "CompanyName": "Galería del gastrónomo", "ContactName": "Eduardo Saavedra", "ContactTitle": "Marketing Manager", "Address": "Rambla de Cataluña, 23", "City": "Barcelona", "Region": null, "PostalCode": "08022", "Country": "Spain", "Phone": "(93) 203 4560", "Fax": "(93) 203 4561" }, { "CustomerID": "GODOS", "CompanyName": "Godos Cocina Típica", "ContactName": "José Pedro Freyre", "ContactTitle": "Sales Manager", "Address": "C/ Romero, 33", "City": "Sevilla", "Region": null, "PostalCode": "41101", "Country": "Spain", "Phone": "(95) 555 82 82", "Fax": null }];
+        var TreeDeptData =
+            { Rows: ajaxData};
+        //right table data
+        var outTableData = { Rows: [] };
+        // create table
+        var createTable = function (divID, contentData) {
+            return $("#" + divID).ligerGrid({
+                columns: [
+                {
+                    display: '客户名称',
+                    name: 'CompanyName',
+                    type: 'text',
+                    align: 'center'
+                },
+
+                ],
+                width: '100%',
+                pageSizeOptions: [5, 10, 15, 20],
+                height: "350px",
+                data: contentData,
+                alternatingRow: false,
+                rownumbers: true,
+                usePager: true,
+                isScroll: true,
+                checkbox: true,
+                frozenRownumbers:false,
+                frozenCheckbox:false,
+                inWindow:true
+            });
+        }
+        //init two tables
+        var leftTable = createTable('maingrid', TreeDeptData);
+        var rightTable = createTable('maingrid1', outTableData);
+
+        //出入库公共方法
+        var operateTable = function (originalTableID, outTableID, data,outFlag) {
+            var node = [];
+            for (var i = 0; i < data.length; i++) {
+                var obj = {};
+                obj.CustomerID = data[i].CustomerID;
+                obj.CompanyName = data[i].CompanyName;
+                node.push(obj);
+            }
+            if(outFlag)//判断是否为出库提交操作
+            {
+                $("#" + originalTableID).ligerGrid().addRows(node);
+                $("#" + outTableID).ligerGrid().deleteRange(data);
+            }
+            return node
+        }
+
+        var submitData = function (tableObj) {
+            if(JSON.stringify(tableObj.getData()) === '[]')
+            {
+                layer.msg('无出库数控', { time: 500 });
+                return;
+            }
+           else
+           {
+               return tableObj.getData()
+           }
+            
+        }
+        //出库操作
+        $(".btn-left").click(function () {
+            var data = $("#maingrid").ligerGrid().getSelecteds();
+            
+            if (JSON.stringify(data) === '[]') {
+                layer.msg('请选择要移动的数据', { time: 500 });
+                return;
+            } else {
+                operateTable('maingrid1', 'maingrid', data,true);
+            }
+        })
+        // 入库操作
+        $(".btn-right").click(function () {
+            var data = $("#maingrid1").ligerGrid().getSelecteds();
+            if (JSON.stringify(data) === '[]') {
+                layer.msg("请选择要移动的数据", { time: 500 });
+                return;
+            } else {
+                operateTable('maingrid', 'maingrid1', data,true);
+            }
+        })
+        //表单提交
+        $('#submit').click(function () {
+            var data = $("#maingrid1").ligerGrid().getSelecteds();
+            if(JSON.stringify(data) === '[]')
+            {
+                layer.msg("请选择要出库的数据", { time: 500 });
+                return;
+            }
+            var arr =  operateTable('maingrid', 'maingrid1', data,false);
+
+            var ids = [];
+            for(var i = 0;i<arr.length;i++){
+                ids.push(arr[i].CustomerID);
+            }
+
+            //ajax method 
+            /*
+             * if success 
+             *    $("#maingrid1").ligerGrid().deleteRange(data);
+             *     
+            */
+            console.log(ids.toString()+','+"beijing");
+        });
+
+    });
+</script>

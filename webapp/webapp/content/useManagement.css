@@ -1,0 +1,40 @@
+.layui-use-item{
+    border-right: 1px dashed #5c90d2;
+    height: 750px;
+    overflow-y: scroll;
+}
+.layui-form-title::before{
+    left: 20px;
+}
+.layui-btn-item{
+    margin-top: 30px;
+    margin-left: 109px;
+}
+.layui-btn img{
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+}
+.layui-btn-del img{
+    width: 16px;
+    height: 16px;
+}
+.layui-btn-edit,.layui-btn-del{
+    background: #5dabce;
+}
+.layui-textarea{
+    width: 60% !important;
+}
+.layui-input{
+    width: 30% !important;
+}
+.layui-form{
+margin-left: 17px;
+}
+.ztree{
+	margin-left:25px !important;
+}
+/* .lsyui-use-edit{
+	height: 800px;
+    overflow-y: scroll;
+} */

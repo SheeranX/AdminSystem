@@ -1,0 +1,44 @@
+/**
+ clientManage 
+***/
+.clientManage-addmore{
+    position: absolute;
+}
+/* #showMore img{
+    margin-right: 32px;
+} */
+#showMore{
+    padding: 0 20px;
+    white-space: nowrap;
+    
+}
+.layui-breadcrumb a:nth-child(1){
+    color: #79a8db !important;
+}
+.layui-breadcrumb a{
+    font-size: 12px;
+}
+.clientManage-container .layui-form-item .layui-inline {
+    margin-bottom: 5px;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+.clientManage-container .btn-spacing{
+    margin-right: 10px;
+}
+.clientManage-container .show-more{
+    width: 15px;
+    height: 15px;
+    background: url(../../common/images/icon_arrow_down.png);
+    margin-top: -2px;
+    vertical-align: middle;
+    display: inline-block;
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+  }
+  .clientManage-container .show-more-click{
+    background: url(../../common/images/icon_arrow_up.png);
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+  }
+

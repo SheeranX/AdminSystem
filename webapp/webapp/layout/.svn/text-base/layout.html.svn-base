@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../common/tools/layui/css/layui.css">
+    <link rel="stylesheet" href="../common/global.css">
+    <link rel="stylesheet" href="../content/css/layout.css">
+    <title>电子票务系统</title>
+</head>
+
+<body>
+    <div class="layui-layout-body full-height">
+        <div class="layui-layout layui-layout-admin full-height">
+            <div class="layui-header white-bg layout-header">
+                <div class="layui-logo black-color" id="test">
+                <img src="../common//images//logo_03.png">
+                </div>
+                <!-- 头部区域（可配合layui已有的水平导航） -->
+                <ul class="layui-nav layui-layout-right black-color">
+                    <li class="layui-nav-item">
+                        <img src="../common/images/manicon_03.png" class="layui-nav-admin">
+                        <span class="black-color">您好,管理员</span>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;" class="blue-color info-hover">
+                            修改密码
+                        </a>
+                    </li>
+                    <li class="layui-nav-item layui-nav-item-time">
+                        2018/4/22 上午11:11
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;" class="black-color warning-hover">
+                            <img src="../common/images/icon_loginout.png" class="layui-nav-img">
+                            退出
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="layui-row layout-minwidth full-height">
+                <div class="layout-nav float-left">
+                    <div class="layout-navtop">
+                        <div id="layout-mini" style="border-bottom:1px solid rgba(255,255,255,.1)">
+                            <i class="layout-mini-icon"></i>
+                        </div>
+                    </div>
+                    <div class="layout-nav-scroll">
+                        <ul>
+                            <li class="layout-navitem">
+                                <a href="javascript:;">
+                                    <i class="layout-myicon layout-navicon layui-icon">&#xe615;</i>
+                                    <span>用户管理</span>
+                                    <i class="layout-myicon layout-navmore layui-icon">&#xe602;</i>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="javascript:;" target="childMenu">
+                                            <i class="layout-point">●</i>
+                                            <span>用户管理</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" target="childMenu">
+                                            <i class="layout-point">●</i>
+                                            <span>权限分配</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" target="childMenu">
+                                            <i class="layout-point">●</i>
+                                            <span> 分类管理</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" target="childMenu">
+                                            <i class="layout-point">●</i>
+                                            <span> 权限管理</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="layout-navitem">
+                                <a href="javascript:;">
+                                    <i class="layout-myicon layout-navicon layui-icon">&#xe609;</i>
+                                    <span>票务管理</span>
+                                    <i class="layout-myicon layout-navmore layui-icon">&#xe602;</i>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="../views/userManage/outofTreasury.html"  target="childMenu">
+                                            <i class="layout-point">●</i>
+                                            <span>站内新闻</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>站内公告</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>登录日志</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="layout-navitem">
+                                <a href="javascript:;">
+                                    <i class="layout-myicon layout-navicon layui-icon">&#xe609;</i>
+                                    <span>系统监控</span>
+                                    <i class="layout-myicon layout-navmore layui-icon">&#xe602;</i>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>订单列表</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>打个酱油</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>也打酱油</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="layout-navitem">
+                                <a href="javascript:;">
+                                    <i class="layout-myicon layout-navicon layui-icon">&#xe609;</i>
+                                    <span>数据管理</span>
+                                    <i class="layout-myicon layout-navmore layui-icon">&#xe602;</i>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>订单列表</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>打个酱油</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>也打酱油</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="layout-navitem">
+                                <a href="javascript:;">
+                                    <i class="layout-myicon layout-navicon layui-icon">&#xe609;</i>
+                                    <span>统计报表</span>
+                                    <i class="layout-myicon layout-navmore layui-icon">&#xe602;</i>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>订单列表</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>打个酱油</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>也打酱油</span>
+                                        </a>
+                                    </li>
+                                </ul> 
+                            </li>
+                            <li class="layout-navitem">
+                                <a href="javascript:;">
+                                    <i class="layout-myicon layout-navicon layui-icon">&#xe609;</i>
+                                    <span>智能报表</span>
+                                    <i class="layout-myicon layout-navmore layui-icon">&#xe602;</i>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>订单列表</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>打个酱油</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>也打酱油</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="layout-navitem">
+                                <a href="javascript:;">
+                                    <i class="layout-myicon layout-navicon layui-icon">&#xe609;</i>
+                                    <span>结账平账</span>
+                                    <i class="layout-myicon layout-navmore layui-icon">&#xe602;</i>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>订单列表</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>打个酱油</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>也打酱油</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="layout-navitem">
+                                <a href="javascript:;">
+                                    <i class="layout-myicon layout-navicon layui-icon">&#xe609;</i>
+                                    <span>财务分析</span>
+                                    <i class="layout-myicon layout-navmore layui-icon">&#xe602;</i>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>订单列表</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>打个酱油</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>也打酱油</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="layout-navitem">
+                                <a href="javascript:;">
+                                    <i class="layout-myicon layout-navicon layui-icon">&#xe609;</i>
+                                    <span>账户管理</span>
+                                    <i class="layout-myicon layout-navmore layui-icon">&#xe602;</i>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>订单列表</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>打个酱油</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>也打酱油</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="layout-navitem">
+                                <a href="javascript:;">
+                                    <i class="layout-myicon layout-navicon layui-icon">&#xe609;</i>
+                                    <span>售票操作</span>
+                                    <i class="layout-myicon layout-navmore layui-icon">&#xe602;</i>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>查票退票</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../views/ticketSaleOperation/clientManage/clientManage.html" target="childMenu">
+                                            <i class="layout-point">●</i>
+                                            <span>客户管理</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>门票入库</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>门票出库</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>门票不补录</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="layout-navitem">
+                                <a href="javascript:;">
+                                    <i class="layout-myicon layout-navicon layui-icon">&#xe609;</i>
+                                    <span>结算核销</span>
+                                    <i class="layout-myicon layout-navmore layui-icon">&#xe602;</i>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>订单列表</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>打个酱油</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>也打酱油</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="layout-navitem">
+                                <a href="javascript:;">
+                                    <i class="layout-myicon layout-navicon layui-icon">&#xe609;</i>
+                                    <span>复合查询</span>
+                                    <i class="layout-myicon layout-navmore layui-icon">&#xe602;</i>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>订单列表</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>打个酱油</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>也打酱油</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="layout-navitem">
+                                <a href="javascript:;">
+                                    <i class="layout-myicon layout-navicon layui-icon">&#xe609;</i>
+                                    <span>运营管理</span>
+                                    <i class="layout-myicon layout-navmore layui-icon">&#xe602;</i>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>订单列表</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>打个酱油</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>也打酱油</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="layout-navitem">
+                                <a href="javascript:;">
+                                    <i class="layout-myicon layout-navicon layui-icon">&#xe609;</i>
+                                    <span>订单管理</span>
+                                    <i class="layout-myicon layout-navmore layui-icon">&#xe602;</i>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>订单列表</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>打个酱油</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>也打酱油</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="layout-navitem">
+                                <a href="javascript:;">
+                                    <i class="layout-myicon layout-navicon layui-icon">&#xe609;</i>
+                                    <span>订单取票</span>
+                                    <i class="layout-myicon layout-navmore layui-icon">&#xe602;</i>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>订单列表</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>打个酱油</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>也打酱油</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="layout-navitem">
+                                <a href="javascript:;">
+                                    <i class="layout-myicon layout-navicon layui-icon">&#xe609;</i>
+                                    <span>二次入园</span>
+                                    <i class="layout-myicon layout-navmore layui-icon">&#xe602;</i>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>订单列表</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>打个酱油</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>也打酱油</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="layout-navitem">
+                                <a href="javascript:;">
+                                    <i class="layout-myicon layout-navicon layui-icon">&#xe614;</i>
+                                    <span>异常处理</span>
+                                    <i class="layout-myicon layout-navmore layui-icon">&#xe602;</i>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>订单列表</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>打个酱油</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <i class="layout-point">●</i>
+                                            <span>也打酱油</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="layout-content spacing-margin">
+                    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+                        <ul class="layui-tab-title">
+                            <li class="layui-this">网站设置</li>
+                            <li><a  href="../views/userManage/userManage.html" target="childMenu">用户管理</a></li>
+                            <li><a href="../views/userManage/permissions.html" target="childMenu">权限分配</a></li>
+                            <li><a href="../views/userManage/authorization.html" target="childMenu">商品管理</a></li>
+                            <li><a href="../views/ticketSaleOperation/clientManage/clientManage.html"  target="childMenu">订单管理</a></li>
+                        </ul>
+                        <div class="layui-tab-content">
+                            <iframe frameborder="0" height="99%" width="100%" scrolling="no" name="childMenu" src="../views/default.html" id="childMenu"></iframe>
+                        </div>
+                    </div>
+                    <span class="toolTip"> </span>
+                    <footer class="txt-align-center layout-copyright">上海大漠电子科技股份有限公司版权所有</footer>
+                </div>
+        </div>
+        </div>
+        <!-- 让IE8/9支持媒体查询， 从而兼容栅格 -->
+        <!--[if lt IE 9]>
+        <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+        <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <script src="../common/tools/ligerui/lib/jquery/jquery-1.9.0.min.js"></script>
+        <script src="../common/tools/layui/layui.all.js"></script>
+        <script src="../content/js/layout.js"></script>
+</body>
+</html>

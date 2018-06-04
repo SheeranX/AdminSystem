@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/WebBase/!svn/ver/11613/Project/TicketSystemProjectForJava/src/html/webapp/webapp/views/userManage
+END
+authorization.html
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/WebBase/!svn/ver/11713/Project/TicketSystemProjectForJava/src/html/webapp/webapp/views/userManage/authorization.html
+END
+kindsManage.html
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/WebBase/!svn/ver/11514/Project/TicketSystemProjectForJava/src/html/webapp/webapp/views/userManage/kindsManage.html
+END
+userManage.html
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/WebBase/!svn/ver/11513/Project/TicketSystemProjectForJava/src/html/webapp/webapp/views/userManage/userManage.html
+END
+permissions.html
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/WebBase/!svn/ver/11713/Project/TicketSystemProjectForJava/src/html/webapp/webapp/views/userManage/permissions.html
+END
+outofTreasury.html
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/WebBase/!svn/ver/11713/Project/TicketSystemProjectForJava/src/html/webapp/webapp/views/userManage/outofTreasury.html
+END

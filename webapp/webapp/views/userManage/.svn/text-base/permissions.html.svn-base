@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="stylesheet" href="../../../common/tools/ligerui/lib/ligerUI/skins/Aqua/css/ligerui-all.css"> -->
+    <link rel="stylesheet" href="../../common/tools//ligerui/lib/ligerUI/skins/Aqua/css/ligerui-all.css">
+    <link rel="stylesheet" href="../../common/tools/layui/css/layui.css">
+    <link rel="stylesheet" href="../../common/global.css">
+    <link rel="stylesheet" href="../../content/css/layout.css">
+    <link rel="stylesheet" href="../../content/css/permissions.css">
+    <title>权限分配</title>
+</head>
+
+<body>
+    <div class="userManage-container layui-fluid">
+        <div class="layui-row">
+            <!-- <iframe src="" frameborder="0"></iframe> -->
+            <div class="layui-row">
+                <div class="layui-col-md6 layui-col-sm6 layui-col-xs6">
+                    <div class="layui-use-item">
+                        <div class="layui-form-title">角色列表</div>
+                    </div>
+                </div>
+                <div class="layui-col-md6 layui-col-sm6 layui-col-xs6">
+                    <div class="lsyui-use-edit">
+                        <div class="layui-form-title">角色用户<span>| 角色特权</span></div>
+                        <button class="layui-btn">
+                            <img src="../../common//images/icon_edit.png" alt="">
+                            保存
+                        </button>
+                        <!-- 表格 -->
+                        <div class="clientManage-table">
+                                <div id="maingrid">
+                                    <!-- eeeee -->
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../common/tools/ligerui/lib/jquery/jquery-1.9.0.min.js"></script>
+    <script src="../../common/tools/layui/layui.all.js"></script>
+    <script src="../../common/tools/ligerui/lib/ligerUI/js/core/base.js"></script>
+    <script src="../../common/tools/ligerui/lib/ligerUI/js/plugins/ligerGrid.js"></script>
+    <script src="../../common/tools/ligerui/lib/ligerUI/js/plugins/ligerDrag.js"></script>
+</body>
+
+</html>
+<script>
+            
+             
+             var TreeDeptData = {};
+             TreeDeptData.Rows=[
+                 {name:"张三",num:"110",role:"角色"},
+                 {name:"张三",num:"110",role:"角色"},
+                 {name:"张三",num:"110",role:"角色"},
+                 {name:"张三",num:"110",role:"角色"}
+             ]
+             var treegrid=$("#maingrid").ligerGrid({
+                columns: [
+                { display: '用户姓名', name: 'name',  align: 'center',type: 'text' },
+                { display: '登陆账号', name: 'num',  type: 'text', align: 'center' },
+                { display: '用户角色', name: 'role',  type: 'text', align: 'center' },
+                ], width: '100%', pageSizeOptions: [5, 10, 15, 20], height: '100%',
+                checkbox:true,
+                data: TreeDeptData, alternatingRow: false, tree: { columnName: 'name' }, rownumbers: true,usePager:false,isScroll:false
+            }
+            );
+           
+  
+</script>

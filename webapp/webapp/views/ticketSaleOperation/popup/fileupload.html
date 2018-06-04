@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../../common/tools/ligerui/lib/ligerUI/skins/Aqua/css/ligerui-all.css">
+    <link rel="stylesheet" href="../../../common/tools/layui/css/layui.css">
+    <link rel="stylesheet" href="../../../common/global.css">
+    <link rel="stylesheet" href="../../../content/css/layout.css">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+      
+    </style>
+    <div class="layui-container clientAdd-container">
+        <form action="" class="layui-form form-popup" id=''>
+            <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">文件上传</label>
+                    <div class="layui-input-block">
+                      <div class="layui-col-md8"> <input type="text" class="layui-input layui-input-readonly" readonly id='fileName'></div>
+                      <div class="layui-col-md2 txt-align-center">
+                            <button class="layui-btn" id="uploadInput">选择上传文件</button>
+                      </div>
+                      <div class="layui-col-md2">
+                            <button class="layui-btn" id="upload">上传</button>
+                      </div>
+                      <div class="layui-col-md3">
+                          <button lay-submit class="layui-btn">保存</button>
+                      </div>
+                    </div>
+                </div>
+        </form>
+    </div>
+    <script src="../../../common/tools/ligerui/lib/jquery/jquery-1.9.0.min.js"></script>
+    <script src="../../../common/tools/layui/layui.all.js"></script>
+    <script src="../../../common/tools/ligerui/lib/ligerUI/js/core/base.js"></script>
+    <script src="../../../common/tools/ligerui/lib/ligerUI/js/plugins/ligerGrid.js"></script>
+    <script src="../../../common/tools/ligerui/lib/ligerUI/js/plugins/ligerDrag.js"></script>
+    <script>
+        $(function () {
+        'use strict';
+        var form = layui.form;
+       // var upload = layui.upload;
+            /**
+             * paras 为配置参数
+             * bindElem : 选择上传文件按钮
+             * method 上传方式 默认post
+             * bindBtn: 上传按钮
+             * showInput:文本框id
+             * url: 接口地址
+             * 用法：调用fileUpload 并将参数配置传入 eg : fileUpload(paras) 注意函数表达式需要先声明后调用
+             * tips:单文件上传测试有效；文件上传形式为二进制的 服务器请先解析(可上传所有类型的文件) ,返回值必须为
+             * JSON 格式  参考地址：http://www.layui.com/doc/modules/upload.html
+             */
+        var paras = {
+            bindElem:'uploadInput',
+            method:'post',
+            bindBtn:'upload',
+            showInput: 'fileName',
+            url:'/api/file/upload'
+        }
+        
+        var fileUpload = function (para) {
+
+             return layui.upload.render({
+                  elem: '#'+para.bindElem,
+                  accept: 'file',
+                  method: para.method,
+                  url: para.url,//文件上传服务器接口地址
+                  bindAction: '#'+para.bindBtn,
+                  auto: false,
+                  size: '20480',//文件大小限制
+                  choose: function (obj) {
+                      var files = this.files = obj.pushFile();//将每次选择的文件追加到文件队列
+                      $(this.bindAction['selector']).removeAttr("disabled");//启用上传按钮
+
+                      obj.preview(function (index, file, result) {
+                          //这里还可以做一些 append 文件列表 DOM 的操作
+                          $('#'+para.showInput).val(file.name)
+                          var index1 = file.name.lastIndexOf(".");
+                          var index2 = file.name.length;
+                          var extension = file.name.substring(index1, index2);//得到文件的后缀名
+
+                          var isImg = /(.png|jpg|bmp|gif|jpeg)$/;//正则表达式验证是否为图片
+
+                          if (isImg.test(extension)) {
+                              //create a new image object
+                              var img = new Image();
+                              img.src = result;
+                              img.id = 'appendImg';
+                              img.style.position = 'absolute';
+                              img.style.width = '200px';
+                              img.style.boxShadow = '1px 1px 1px #ccc';
+                              img.style.zIndex = '999';
+                              img.style.border = '1px solid #ccc';
+
+                              //在指定元素后面append一个img 元素
+                              $('#'+para.showInput).after(img);
+                              $('#' + img.id).attr('src', result).hide();
+                              $('#'+para.showInput).hover(function () {
+                                  $('#' + img.id).show();
+                              }, function () {
+                                  $('#' + img.id).hide();
+                              });
+                          } else {
+                               $('#'+para.showInput).next(img).remove();
+                          }
+                      });
+                  },
+                  before: function (obj) {
+                      //before uplaod to-do
+                      layer.load();
+                  },
+                  done: function (res, index, upload) {
+                      //success to-do
+                      layer.closeAll('loading');
+                      layer.msg('上传成功', { icon: 6, time: 1500 });
+                      delete this.files[index]; //上传成功之后删除队列里面的文件
+                      $(this.bindAction['selector']).attr("disabled", "true");//上传成功后禁用上传按钮
+                  },
+                  error: function () {
+                      //exception to-do
+                      layer.closeAll('loading');
+                  }
+              });
+          };
+
+          fileUpload(paras);
+        //监听提交
+        form.on('submit', function(data){
+            //To-DO 在这里写提交
+            //tips : 在使用fileupload时，先将其他表单信息上传，然后在成功的回调函数里面触发文件上传
+
+            $("#upload").trigger("click");  //触发上传文件   此按钮为 bindAction 对应的按钮
+
+            return false;
+        });
+    })
+    </script>
+</body>
+</html>

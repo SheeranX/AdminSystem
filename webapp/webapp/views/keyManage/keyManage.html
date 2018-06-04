@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../common/tools/ligerui/lib/ligerUI/skins/Aqua/css/ligerui-all.css">
+    <link rel="stylesheet" href="../../common/tools/layui/css/layui.css">
+    <link rel="stylesheet" href="../../common/global.css">
+    <link rel="stylesheet" href="../../content/css/keyManage.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="keyManege-container layui-fluid spacing-padding-top">
+        <div class="layui-row">
+            <form action="" class="layui-form">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">
+                        <span class="layui-form-x">*</span> 密钥名称:
+                    </label>
+                    <div class="layui-input-block">
+                        <input type="text" text="" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">
+                        <span class="layui-form-x">*</span> 状态:
+                    </label>
+                    <div class="layui-input-block">
+                        <select name="" id="">
+                            <option value="">10</option>
+                            <option value="1">20</option>
+                            <option value="2">30</option>
+                            <option value="3">40</option>
+                            <option value="4">50</option>
+                            <option value="5">60</option>
+                            <option value="6">70</option>
+                            <option value="7">80</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <table class="layui-table txt-align-center">
+                        <colgroup>
+                            <col width="150">
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>密钥一</th>
+                                <th>密钥二</th>
+                                <th>密钥三</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span class="layui-form-x">*</span> 新密钥</td>
+                                <td>
+                                    <input type="text">
+                                </td>
+                                <td>
+                                    <input type="text">
+                                </td>
+                                <td>
+                                    <input type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="layui-form-x">*</span> 确认密钥</td>
+                                <td>
+                                    <input type="text">
+                                </td>
+                                <td>
+                                    <input type="text">
+                                </td>
+                                <td>
+                                    <input type="text">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="layui-form-item txt-align-center spacing-padding-top">
+                    <button class="layui-btn layui-btn">确认添加</button>
+                </div>
+            </form>
+            <div class="row  spacing-padding-top"> 
+                <p>注意：请您慎重输入三级密钥，每级密钥只能输入三位数字，每级密钥输入两次已确保正确性；请牢记您的密钥，下次修改时需输入现有密钥；不要泄露密钥</p>
+            </div>
+        </div>
+    </div>
+    <script src="../../common/tools/ligerui/lib/jquery/jquery-1.9.0.min.js"></script>
+    <script src="../../common/tools/layui/layui.all.js"></script>
+</body>
+
+</html>

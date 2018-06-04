@@ -1,0 +1,33 @@
+.layui-btn img{
+    width: 20px;
+    height: 20px;
+}
+
+.layui-use-item{
+    border-right: 1px dashed #5c90d2;
+    height: 750px;
+    overlow-y:scroll;
+}
+.layui-form-title::before{
+    left: 20px;
+}
+.layui-btn{
+    margin-top: 20px;
+    margin-left: 35px;
+}
+.layui-form-title span{
+    font-weight:normal;
+    margin-left: 5px;
+}
+.ztree{
+	margin-left:25px;
+}
+.l-panel{
+	margin-left: 18px;
+    margin-top: 25px;
+}
+
+.lsyui-use-edit{
+	overflow-y: scroll;
+    height: 750px;
+}

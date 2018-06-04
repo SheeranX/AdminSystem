@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="stylesheet" href="../../../common/tools/ligerui/lib/ligerUI/skins/Aqua/css/ligerui-all.css"> -->
+    <link rel="stylesheet" href="../../common/tools//ligerui/lib/ligerUI/skins/Aqua/css/ligerui-all.css">
+    <link rel="stylesheet" href="../../common/tools/layui/css/layui.css">
+    <link rel="stylesheet" href="../../common/global.css">
+    <link rel="stylesheet" href="../../content/css/layout.css">
+    <link rel="stylesheet" href="../../content/css/outofTreasury.css">
+    <title>权限分配</title>
+</head>
+
+<body>
+    <div class="userManage-container layui-fluid">
+            <!-- <iframe src="" frameborder="0"></iframe> -->
+            <div class="layui-row">
+                <div class="layui-col-md5 layui-col-sm5  layui-col-xs5 ">
+                    <div class="layui-use-item">
+                        <div class="layui-form-title">未出库票断信息</div>
+                        <form class="layui-form" action="">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">发票代码:</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="title" required lay-verify="required" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">发票号:</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="title" required lay-verify="required" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-form-item layui-form-btn">
+                                <button class="layui-btn">
+                                    <img src="../../common/images/icon_search.png"> 查询
+                                </button>
+                            </div>
+                        </form>
+                        <div id="maingrid">
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+                    <div class="layui-charge">
+                        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+                            <div class="layui-btn layui-btn-xs btn-left">
+                                <i class="layui-icon layui-icon-left"></i>
+                            </div>
+                        </div>
+                        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+                            <div class="layui-btn layui-btn-xs btn-right">
+                                <i class="layui-icon layui-icon-right"></i>
+                            </div>
+                        </div>
+                        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+                            <div class="layui-outof">
+                                <button class="layui-btn">出库</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md5 layui-col-sm5 layui-col-xs5">
+                    <div class="lsyui-use-edit">
+                        <div class="layui-form-title">
+                            待出库票端信息
+
+                        </div>
+                        <!-- 表格 -->
+                        <div class="clientManage-table">
+                            <div id="maingrid1">
+
+                            </div>
+                        </div>
+                        <div class="layui-form-foot">
+                            <div class="layui-use-lp">
+                                <span class="layui-form-x"> * </span>领票用户:
+                            </div>
+                            <form class="layui-form" action="">
+
+                                <div class="layui-form-item">
+
+                                    <select name="city" lay-verify="">
+                                        <option value="010">北京</option>
+                                        <option value="021">上海</option>
+                                        <option value="0571">杭州</option>
+                                    </select>
+                                </div>
+                                <div class="layui-form-item layui-form-check">
+                                    <input type="checkbox" name="" title="给售票员(不可分配)" lay-skin="primary" checked>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 出库 -->
+    </div>
+    <script src="../../common/tools/ligerui/lib/jquery/jquery-1.9.0.min.js"></script>
+    <script src="../../common/tools/layui/layui.all.js"></script>
+    <script src="../../common/tools/ligerui/lib/ligerUI/js/core/base.js"></script>
+    <script src="../../common/tools/ligerui/lib/ligerUI/js/plugins/ligerGrid.js"></script>
+    <script src="../../common/tools/ligerui/lib/ligerUI/js/plugins/ligerDrag.js"></script>
+</body>
+
+</html>
+<script>
+    var treegrid;
+    var treegrid1;
+    $(function () {
+        var TreeDeptData = {};
+        TreeDeptData.Rows = [{
+                name: "张三",
+                num: "110",
+                minnum: "22222",
+                maxnum: "333333",
+                total: "8888",
+                nouse: "90000"
+            },
+            {
+                name: "张三",
+                num: "110",
+                minnum: "1111",
+                total: "8888",
+                maxnum: "333333",
+                nouse: "90000"
+            },
+            {
+                name: "张三",
+                num: "110",
+                minnum: "角色",
+                total: "8888",
+                maxnum: "333333",
+                nouse: "90000"
+            },
+            {
+                name: "张三",
+                num: "110",
+                minnum: "角色",
+                total: "8888",
+                maxnum: "333333",
+                nouse: "90000"
+            }
+        ]
+        treegrid = $("#maingrid").ligerGrid({
+            columns: [{
+                    display: '发票代码',
+                    name: 'name',
+                    align: 'center',
+                    type: 'text',
+                    totalSummary: {
+                        render: function () {
+                            return '<div>合计:</div>';
+                        },
+                        align: 'left'
+                    }
+                },
+                {
+                    display: '最小发票号',
+                    name: 'minnum',
+                    type: 'text',
+                    align: 'center'
+                },
+                {
+                    display: '最大发票号',
+                    name: 'maxnum',
+                    type: 'text',
+                    align: 'center'
+                },
+                {
+                    display: '总数量',
+                    name: 'total',
+                    type: 'text',
+                    align: 'center'
+                },
+                {
+                    display: '未使用',
+                    name: 'nouse',
+                    type: 'text',
+                    align: 'center',
+                    totalSummary: {
+                        render: function (suminf, column, cell) {
+                            return '<div>' + suminf.sum + '</div>';
+                        },
+                        align: 'left'
+                    }
+                }
+            ],
+            width: '100%',
+            pageSizeOptions: [5, 10, 15, 20],
+            height: '100%',
+            data: TreeDeptData,
+            alternatingRow: false,
+            rownumbers: false,
+            usePager: true,
+            isScroll: true,
+            checkbox: false
+        });
+    })
+    $(function () {
+        var TreeDeptData = {};
+        TreeDeptData.Rows = [{
+                name: "李四",
+                num: "1101",
+                minnum: "99999",
+                maxnum: "333333",
+                total: "8888",
+                nouse: "90000"
+            },
+            {
+                name: "李四",
+                num: "88888",
+                minnum: "1111",
+                total: "8888",
+                maxnum: "333333",
+                nouse: "90000"
+            },
+            {
+                name: "李四",
+                num: "110",
+                minnum: "角色",
+                total: "8888",
+                maxnum: "333333",
+                nouse: "90000"
+            },
+            {
+                name: "李四",
+                num: "110",
+                minnum: "角色",
+                total: "8888",
+                maxnum: "333333",
+                nouse: "90000"
+            },
+            {
+                name: "李四",
+                num: "88888",
+                minnum: "1111",
+                total: "8888",
+                maxnum: "333333",
+                nouse: "90000"
+            }
+        ]
+        treegrid1 = $("#maingrid1").ligerGrid({
+            columns: [{
+                    display: '发票代码',
+                    name: 'name',
+                    align: 'center',
+                    type: 'text',
+                    totalSummary: {
+                        render: function () {
+                            return '<div>合计:</div>';
+                        },
+                        align: 'left'
+                    }
+                },
+                {
+                    display: '最小发票号',
+                    name: 'minnum',
+                    type: 'text',
+                    align: 'center'
+                },
+                {
+                    display: '最大发票号',
+                    name: 'maxnum',
+                    type: 'text',
+                    align: 'center'
+                },
+                {
+                    display: '总数量',
+                    name: 'total',
+                    type: 'text',
+                    align: 'center'
+                },
+                {
+                    display: '未使用',
+                    name: 'nouse',
+                    type: 'text',
+                    align: 'center',
+                    totalSummary: {
+                        render: function (suminf, column, cell) {
+                            return '<div>' + suminf.sum + '</div>';
+                        },
+                        align: 'left'
+                    }
+                }
+            ],
+            width: '100%',
+            pageSizeOptions: [5, 10, 15, 20],
+            height: '100%',
+            data: TreeDeptData,
+            alternatingRow: false,
+            rownumbers: false,
+            usePager: true,
+            isScroll: true,
+            checkbox: false
+        })
+    })
+    $(function () {
+        $(".btn-left").click(function () {
+            var data = treegrid1.getData()[0];
+            if (data != null) {
+                console.log(JSON.stringify(data));
+                treegrid.addRow(data);
+                treegrid1.deleteRow(0);
+            }
+        })
+        $(".btn-right").click(function () {
+            var data = treegrid.getData()[0];
+            if (data != null) {
+                console.log(JSON.stringify(data));
+                treegrid1.addRow(data);
+                treegrid.deleteRow(0);
+            }
+        })
+    })
+</script>

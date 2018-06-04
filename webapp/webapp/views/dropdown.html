@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登陆</title>
+    <link rel="stylesheet" href="../common/tools/layui/css/layui.css">
+    <link rel="stylesheet" href="../common/global.css">
+</head>
+
+<body>
+    <style>
+        .dropdown-crud {
+            min-width: 220px;
+           
+            border: 1px solid #c8c8c8;
+            box-sizing: border-box;
+            background: #fff;
+        }
+        .dropdown-title {
+            height: 30px;
+            line-height: 30px;
+            padding: 0px 5px;
+            color: #3e3e3e;
+        }
+     
+        .dropdown-title div {
+            display: inline-block;
+        }
+
+        .dropdown-title .dropdown-title-txt {
+            width: 80%;
+        }
+
+        .dropdown-title .dropdown-title-icon {
+            width: 15%;
+            text-align: right;
+        }
+       .drowdown-main{
+            box-shadow: 1px 1px 1px #c8c8c8;
+            margin-top: 10px;
+            border: 1px solid #c8c8c8;
+            position: absolute;
+            width: 250px;
+       }
+        .dropdown-content {
+            height: 230px;
+            border-bottom: 1px solid #c8c8c8;
+        }
+
+        .dropdown-footer {
+            line-height: 35px;
+            padding: 0px 5px;
+            font-size: 16px;
+            text-align: right;
+        }
+
+        .dropdown-content ul {
+            height: 80%;
+            overflow-y: scroll;
+        }
+
+        .dropdown-content ul li {
+            height: 30px;
+            line-height: 30px;
+            padding: 5px;
+        }
+
+        .dropdown-content ul li:hover {
+            background: #5c90d2;
+            color: #fff;
+        }
+
+        .dropdown-content ul li p {
+            display: inline-block;
+        }
+
+        .dropdown-list-value {
+            width: 70%;
+        }
+
+        .dropdown-list-operate {
+            width: 25%;
+            text-align: right;
+            letter-spacing: 10px;
+        }
+        .dropdown-footer{
+          padding: 5px;
+        }
+        .dropdown-footer p{
+            display: inline-block;
+        }
+        .dropdown-footer-value {
+            width: 70%;
+        }
+
+        .dropdown-footer-operate {
+            width: 25%;
+            text-align: right;
+            letter-spacing: 5px;
+        }
+        .dropdown-content-search {
+            padding: 5px 5px 10px 5px;
+        }
+      
+    </style>
+    <form action="" class="layui-form form-popup long-label-form">
+        <div class="layui-row">
+            <div class="layui-col-md6 layui-col-sm6 layui-col-xs6">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">
+                        <span class='layui-form-x'>*</span>票种类型：</label>
+                    <div class="layui-input-block">
+                        <div class="dropdown">
+                            <select name="" id="" lay-ignore>
+                                <option value="">1q</option>
+                                <option value="21">2q</option>
+                                <option value="31">3q</option>
+                                <option value="41">4q</option>
+                                <option value="51">5q</option>
+                                <option value="61">6q</option>
+                                <option value="71">7q</option>
+                            </select>
+                            <div class="dropdown-crud">
+                                <div class="dropdown-title">
+                                    <div class="dropdown-title-txt">这是字段</div>
+                                    <div class="dropdown-title-icon">
+                                        <span class="layui-icon layui-icon-triangle-d"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script src="../common/tools/ligerui/lib/jquery/jquery-1.9.0.min.js"></script>
+    <script src="../common/tools/layui/layui.all.js"></script>
+    <script>
+        (function ($) {
+            'use strict';
+            $(function () {
+                var settings = {
+                    input: '<input type="text" maxLength="20" placeholder="搜索关键词或ID" class="layui-input ">',
+                    select: '',
+                }
+             
+                $('.dropdown').find('select').hide();
+                
+                $('.dropdown-title').click(function(){
+                    if($(this).next('.drowdown-main').length>0)
+                    {
+                        $(this).next().toggle();
+                    }
+                    else
+                    {
+                        $(this).after(template);
+                    }
+                });
+               //操作功能
+                var optionList = function(){
+                    var str = "";
+                    $('.dropdown').find('option').each(function(){
+                      str += "<li data-value='"+$(this).val()+"'>"+
+                        "<p class=\"dropdown-list-value\"><span>"+ $(this).text()+"</span></p>"+
+                        "<p class=\"dropdown-list-operate\">"+
+                        "<span class=\"layui-icon dropdown-edit layui-icon-edit\"></span>"+
+                        "<span class=\"layui-icon dropdown-delete layui-icon-delete\"></span>"+
+                        "</p>"+"</li>";
+                    });
+                    return str;
+                }
+                //字符串模板
+                var template = '<div class="drowdown-main" style="display: block">' +
+                    '<div class="dropdown-content">' +
+                    '<div class="dropdown-content-search">' +
+                    '<input type="text" maxLength="20" placeholder="搜索关键词或ID" class="layui-input ">' +
+                    '</div><ul>'+optionList()+'</ul></div>'+' <div class="dropdown-footer">'+
+                    '<p class="dropdown-footer-value"></p><p class="dropdown-footer-operate"><span class="layui-icon layui-icon-add-1 dropdown-add"></span></p>'+
+                    '</div>';
+                var eidtDel = '';
+                var saveCancel = '';
+                //新增item
+                $('.dropdown').delegate('.dropdown-add','click',function(){
+                  $('.dropdown-footer').find('.dropdown-footer-value').html('<input type="text" maxLength="20" class="layui-input">');
+                  $('.dropdown-footer').find('.dropdown-footer-operate').html('<span class="layui-icon dropdown-save layui-icon-ok"></span><span class="layui-icon dropdown-cancel layui-icon-close"></span>');
+                });
+                //编辑
+                $('.dropdown').delegate('.dropdown-edit','click',function(){
+                   $(this).parent().parent().find('.dropdown-list-value').append('<input type="text" maxLength="20" class="layui-input" value="'+$(this).parent().parent().find('span').text()+'">').find('span').hide();
+                   $(this).parent().html('<span class="layui-icon layui-icon-ok dropdown-save"></span><span class="layui-icon layui-icon-close dropdown-cancel"></span>');     
+                });
+                //删除item
+                $('.dropdown').delegate('.dropdown-delete','click',function(e){
+                  var val = $(this).parent().parent().attr('data-value');
+                  $(this).parent().parent().remove();
+                });
+                 //保存编辑
+                 $('.dropdown').delegate('.dropdown-save','click',function(){
+                    if($(this).parent().hasClass('dropdown-footer-operate'))
+                   {
+                    $(this).parent().parent().find('.layui-input').remove();
+                    $(this).parent().html('<span class="layui-icon layui-icon-add-1 dropdown-add"></span>');
+                   }
+                   else
+                   {
+                    $(this).parent().parent().find('.layui-input').remove();
+                    $(this).parent().parent().find('span').show();
+                    $(this).parent().html('<span class="layui-icon dropdown-edit layui-icon-edit"></span><span class="layui-icon dropdown-delete layui-icon-delete"></span>');
+
+                   }
+                });
+                //取消编辑
+                $('.dropdown').delegate('.dropdown-cancel','click',function(){
+                   if($(this).parent().hasClass('dropdown-footer-operate'))
+                   {
+                    $(this).parent().parent().find('.layui-input').remove();
+                    $(this).parent().html('<span class="layui-icon layui-icon-add-1 dropdown-add"></span>');
+                   }
+                   else
+                   {
+                    $(this).parent().parent().find('.layui-input').remove();
+                    $(this).parent().parent().find('span').show();
+                    $(this).parent().html('<span class="layui-icon dropdown-edit layui-icon-edit"></span><span class="layui-icon dropdown-delete layui-icon-delete"></span>');
+                   }
+                });
+                
+                $(document).bind('click',function(e){
+                    $('.dropdown-main').show();
+                    var e = e||window.event;
+                    var elem = e.target||e.srcElement;
+
+                    while(elem){
+                        if(elem.className&&elem.className=='dropdown-crud')
+                       {
+                          return;
+                       }
+                         elem = elem.parentNode;
+                    }
+
+                });
+            });
+        })(jQuery);
+
+    </script>
+
+</body>
+</html>

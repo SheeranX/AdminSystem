@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../../common/tools/layui/css/layui.css">
+    <link rel="stylesheet" href="../../../common/global.css">
+    <link rel="stylesheet" href="../../../content/css/layout.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="layui-container clientAdd-container">
+        <form action="" class="layui-form form-popup long-label-form">
+            <div class="layui-row">
+                <div class="layui-form-title">票种信息</div>
+                <div class="layui-col-md6 layui-col-sm6 layui-col-xs6">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">
+                            <span class='layui-form-x'>*</span>票种类型：</label>
+                        <div class="layui-input-block">
+                            <select name="" id="">
+                                <option value="">11</option>
+                                <option value="1">21</option>
+                                <option value="2">31</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md6 layui-col-sm6 layui-col-xs6">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">
+                            <span class='layui-form-x'>*</span>票名称：</label>
+                        <div class="layui-input-block">
+                            <select name="" id="">
+                                <option value="">11</option>
+                                <option value="1">21</option>
+                                <option value="2">31</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-md6 layui-col-sm6 layui-col-xs6">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label"><span class='layui-form-x'>*</span>定价：</label>
+                        <div class="layui-input-block">
+                           <input type="text" class="layui-input layui-input-readonly" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md6 layui-col-sm6 layui-col-xs6">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">
+                            <span class='layui-form-x'>*</span>售票：</label>
+                        <div class="layui-input-block">
+                         <input type="text" class="layui-input layui-input-readonly" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+                    <div class="layui-form-item">
+                        <label for="" class="layui-form-label"><span class="layui-form-x">*</span> 时间模式：</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="timeModule" value="calendar" title="日历模式" checked>
+                            <input type="radio" name="timeModule" value="week" title="星期模式">
+                            <input type="radio" name="timeModule" value="season" title="淡旺季模式">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-row">
+                    <div class="layui-col-md6 layui-col-sm6 layui-col-xs6">
+                        <div class="layui-form-item">
+                            <label for="" class="layui-form-label"><span class="layui-form-x">*</span> 执行开始日期：</label>
+                            <div class="layui-input-block">
+                                <input type="text" class="layui-input" id="startDate" placeholder="执行开始日期">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md6 layui-col-sm6 layui-col-xs6">
+                        <div class="layui-form-item">
+                            <label for="" class="layui-form-label"><span class="layui-form-x">*</span> 执行结束日期：</label>
+                            <div class="layui-input-block">
+                                <input type="text" class="layui-input" id="endDate" placeholder=" 执行结束日期">
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label"><span class="layui-form-x">*</span>价格周期：</label>
+                        <div class="layui-input-block">
+                            <table class="layui-table price-table">
+                                <thead>
+                                  <tr>
+                                    <th>子票名称</th>
+                                    <th>定价</th>
+                                    <th>单价</th>
+                                    <th>票数量</th>
+                                    <th class="white-bg">执行单价</th>
+                                  </tr> 
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="white-bg">
+                                        <input type="text">
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-md6 layui-col-sm6 layui-col-xs6">
+                   <div class="layui-form-item">
+                    <label class="layui-form-label"><span class="layui-form-x">*</span> 主要执行价格：</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input layui-input-readonly" readonly>
+                    </div>
+                   </div>
+                </div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label"><span class="layui-form-x">*</span>价格周期：</label>
+                        <div class="layui-input-block">
+                            <table class="layui-table price-table">
+                                <thead>
+                                  <tr>
+                                    <th>子票名称</th>
+                                    <th>定价</th>
+                                    <th>单价</th>
+                                    <th>票数量</th>
+                                  </tr> 
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="4">
+                                        <div class="innerTable">
+                                            <table class="layui-table">
+                                                <thead>
+                                                  <tr>
+                                                    <th colspan="7">
+                                                        执行单价
+                                                    </th>
+                                                  </tr> 
+                                                </thead>
+                                                <tbody>
+                                                  <tr>
+                                                  <td>星期一</td>
+                                                  <td>星期二</td>
+                                                  <td>星期三</td>
+                                                  <td>星期四</td>
+                                                  <td>星期五</td>
+                                                  <td>星期六</td>
+                                                  <td>星期日</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>
+                                                        <input type="text">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text">
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                        </div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label"><span class="layui-form-x">*</span> 主要执行价格：</label>
+                        <div class="layui-input-block">
+                            <table class="layui-table price-table">
+                                <thead>
+                                  <tr>
+                                    <th>星期一</th>
+                                    <th>星期二</th>
+                                    <th>星期三</th>
+                                    <th>星期四</th>
+                                    <th>星期五</th>
+                                    <th>星期六</th>
+                                    <th>星期日</th>
+                                  </tr> 
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label"><span class="layui-form-x">*</span> 价格周期：</label>
+                        <div class="layui-input-block">
+                            <table class="layui-table price-table">
+                                <thead>
+                                  <tr>
+                                    <th>子票名称</th>
+                                    <th>定价</th>
+                                    <th>单价</th>
+                                    <th>票数量</th>
+                                  </tr> 
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="4">
+                                      <div class="innerTable">
+                                        <table class="layui-table price-table">
+                                            <thead>
+                                              <tr>
+                                                <th colspan="6">执行单价</th>
+                                              </tr> 
+                                            </thead>
+                                            <tbody>
+                                              <tr>
+                                                <td>一月</td>
+                                                <td>二月</td>
+                                                <td>三月</td>
+                                                <td>四月</td>
+                                                <td>五月</td>
+                                                <td>六月</td>
+                                              </tr>
+                                              <tr>
+                                                  <td><input type="text"></td>
+                                                  <td><input type="text"></td>
+                                                  <td><input type="text"></td>
+                                                  <td><input type="text"></td>
+                                                  <td><input type="text"></td>
+                                                  <td><input type="text"></td>
+                                              </tr>
+                                              <tr>
+                                                <td>一月</td>
+                                                <td>二月</td>
+                                                <td>三月</td>
+                                                <td>四月</td>
+                                                <td>五月</td>
+                                                <td>六月</td>
+                                              </tr>
+                                              <tr>
+                                                  <td><input type="text"></td>
+                                                  <td><input type="text"></td>
+                                                  <td><input type="text"></td>
+                                                  <td><input type="text"></td>
+                                                  <td><input type="text"></td>
+                                                  <td><input type="text"></td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label"><span class="layui-form-x">*</span> 执行结束日期：</label>
+                        <div class="layui-input-block">
+                            <table class="layui-table price-table">
+                                <thead>
+                                  <tr>
+                                    <th>一月</th>
+                                    <th>二月</th>
+                                    <th>三月</th>
+                                    <th>四月</th>
+                                    <th>五月</th>
+                                    <th>六月</th>
+                                  </tr> 
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                  </tr>
+                                  <tr>
+                                   <td>七月</td>
+                                   <td>八月</td>
+                                   <td>九月</td>
+                                   <td>十月</td>
+                                   <td>十一月</td>
+                                   <td>十二月</td>  
+                                  </tr>
+                                  <tr>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-row">
+                    <div class="layui-form-item txt-align-center spacing-marign-top spacing-marign-btm">
+                        <label for="" class="layui-form-label"></label>
+                        <div class="layui-input-block">
+                            <span class="layui-btn layui-popup-btn">添加</span>
+                        </div>
+                    </div>
+                </div>
+        </form>
+    </div>
+    <script src="../../../common/tools/ligerui/lib/jquery/jquery-1.9.0.min.js"></script>
+    <script src="../../../common/tools/layui/layui.all.js"></script>
+</body>
+<script>
+    var laydate = layui.laydate;
+    laydate.render({
+    elem: '#startDate' //指定元素
+    });
+    laydate.render({
+    elem: '#endDate' //指定元素
+    });
+</script>
+</html>

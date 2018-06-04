@@ -1,0 +1,78 @@
+.layui-use-item{
+    height: 600px;
+    /* overflow-y: scroll; */
+}
+.lsyui-use-edit{
+    height: 600px;
+    /* overflow-y: scroll; */
+}
+.layui-form-title::before{
+    left:20px !important;
+}
+.layui-form{
+    height: 40px;
+}
+.layui-form .layui-form-item{
+    width: 33%;
+    float: left !important;
+}
+
+.layui-form-item{
+    clear:none  !important;
+}
+.layui-input-block {
+    margin-left: 90px !important;
+}
+.layui-btn{
+    margin-left: 30px;
+}
+.layui-charge{
+    margin-top: 220px;
+}
+.layui-btn-xs{
+    margin-top: 30px;
+    background: #5dabce !important;
+    margin-left: 70px;
+    width: 100px;
+}
+.l-panel{
+    margin-top: 10px;
+}
+.layui-use-lp{
+    display: inline-block;
+    float: left;
+    margin-top: 5px;
+}
+.layui-form-foot{
+    margin-top: 20px;
+}
+/* .layui-form-select .layui-input{
+    width: 145px !important;
+    margin-left: 15px;
+}
+.layui-form-select .layui-edge{
+    right: 60px !important;
+}
+.layui-form-item .layui-form-checkbox[lay-skin=primary]{
+    margin-top: 5px !important;
+} */
+/* .layui-form-select dl{
+    left: 15px !important;
+    min-width: 74% !important;
+} */
+.layui-form-check{
+    margin-left: 50px;
+}
+.layui-outof .layui-btn{
+    width: 300px;
+    height: 30px;
+    margin-top: 200px;
+    margin-left: -20px;
+}
+.layui-btn img{
+    width: 20px;
+    height: 20px;
+}
+.l-grid-body,.l-grid{
+    height: auto !important;
+}

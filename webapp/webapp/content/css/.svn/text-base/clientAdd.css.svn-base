@@ -1,0 +1,41 @@
+/****
+    clientAdd popup css
+*/
+ .clientAdd-location .layui-input-inline{
+    margin-right: 0px!important;
+    width: 176px;
+}
+.clientAdd-location .layui-input-inline:last-child{
+    width: 175px!important;
+}
+.clientAdd-location .layui-input-inline .layui-input{
+    border-radius: 0px!important;
+    border-left: 0px;
+}
+.clientAdd-location .layui-input-inline .layui-input:first-child{
+    border-left: 1px solid #e6e6e6;
+}
+.clientAdd-popup .submitBtn{
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.clientAdd-popup .layui-form-label{
+    padding: 0px 5px 0 0px;
+    line-height: 30px;
+    width: 140px !important;
+}
+.clientAdd-popup .layui-input-block {
+    margin-left: 145px!important;
+    /* min-height: 36px; */
+}
+.l-grid-row-cell-checkbox span, .l-grid-hd-cell-checkbox .l-grid-hd-cell-inner div{
+    margin-top: 9px !important;
+}
+.layui-form-pay{
+    margin-left:30px;
+}
+.layui-form-item .layui-form-checkbox[lay-skin=primary]{
+    margin-left: 23px;
+}

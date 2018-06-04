@@ -1,0 +1,29 @@
+
+.layui-use-item{
+    border-right: 1px dashed #5c90d2;
+    height: 800px;
+}
+.layui-form-title::before{
+    left: 20px;
+}
+.layui-form-title span{
+     font-weight:normal;
+     margin-left: 5px;
+}
+.layui-btn img{
+    width: 20px;
+    height: 20px;
+}
+.layui-btn{
+    margin-top: 20px;
+    margin-left: 35px;
+}
+.clientManage-table{
+    width: 80%;
+    height: 80%;
+    margin-top: 30px;
+    margin-left: 35px;
+}
+.l-panel{
+    border: none !important;
+}

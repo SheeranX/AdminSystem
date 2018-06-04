@@ -1,0 +1,39 @@
+
+.layui-use-item{
+    border-right: 1px dashed #5c90d2;
+    height: 750px;
+   overflow-y:scroll;
+}
+.layui-form-title::before{
+    left: 20px;
+}
+.layui-form-title span{
+    
+     margin-left: 5px;
+}
+.layui-btn img{
+    width: 20px;
+    height: 20px;
+}
+.layui-btn{
+    margin-top: 20px;
+    margin-left: 35px;
+}
+.clientManage-table{
+    width: 80%;
+    height: 80%;
+    margin-top: 30px;
+    margin-left: 35px;
+}
+.l-panel{
+    border: none !important;
+}
+.ztree{
+	margin-left: 30px;
+    margin-top: 14px;
+}
+
+.lsyui-use-edit{
+	 height: 750px;
+    overflow-y: scroll;
+}

@@ -1,0 +1,67 @@
+
+.contractGroup .layui-form-title::before{
+    left:20px !important;
+}
+.contractGroup .layui-form{
+    height: 40px;
+}
+.contractGroup .layui-form .layui-form-item{
+    /* width: 45%; */
+    float: left !important;
+}
+
+.contractGroup .layui-form-item{
+    clear:none  !important;
+}
+.contractGroup .layui-input-block {
+    margin-left: 90px !important;
+}
+.contractGroup .layui-btn{
+    margin-left: 30px;
+}
+.contractGroup .layui-charge{
+    margin-top: 130px;
+}
+.contractGroup .layui-btn-xs{
+    margin-top: 30px;
+    background: #5dabce !important;
+    margin-left: 60px;
+    width: 50px;
+}
+/* .contractGroup .l-panel{
+    margin-top: 10px;
+} */
+.contractGroup .layui-use-lp{
+    display: inline-block;
+    float: left;
+    margin-top: 5px;
+}
+.layui-form-foot{
+    margin-top: 20px;
+}
+.contractGroup .layui-form-check{
+    margin-left: 50px;
+}
+.contractGroup .layui-outof .layui-btn{
+    width: 200px;
+    height: 30px;
+    margin-top:200px;
+    margin-left: -20px;
+}
+.contractGroup .layui-btn img{
+    width: 20px;
+    height: 20px;
+}
+/* .contractGroup .l-grid-body,.l-grid{
+    height: auto !important;
+} */
+
+.contractGroup .layui-row{
+    margin-top: 10px;
+}
+.contractGroup #maingrid1{
+    margin-top: 10px;
+    /* overflow-y: auto; */
+    /* height: 300px  !important; */
+}
+
