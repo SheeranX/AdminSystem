@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" class="layui-bg-gray">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../../common/tools/ligerui/lib/ligerUI/skins/Aqua/css/ligerui-all.css">
+    <link rel="stylesheet" href="../../../common/tools/layui/css/layui.css">
+    <link rel="stylesheet" href="../../../common/tools/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../content/css/selectpage.css">
+    <link rel="stylesheet" href="../../../common/global.css">
+    <link rel="stylesheet" href="../../../content/css/saleTickets.css">
+    <title>团体票</title>
+</head>
+
+<body>
+    <div class="clientManage-container saleTicket">
+        <div class="layui-row">
+            <form class="clientManage-form layui-form">
+                <div class="layui-row white-bg spacing-padding" style="padding-bottom: 0px">
+                    <div class="layui-form-title">
+                        <label for="" style="margin-right: 50px">团体票</label>
+                    </div>
+                    <div class="left-ticket float-right">
+                        <p>
+                            <span>门票打印机：</span>
+                            <span>剩余约</span>
+                            <span class="danger-color">299</span>
+                            <span>张</span>
+                        </p>
+                    </div>
+                    <div class="layui-form-item spacing-padding-left" style="margin-bottom: 0px;">
+                        <div class="layui-inline spacing-padding-left">
+                            <label class="layui-form-label">单位名称：</label>
+                            <div class="layui-input-inline">
+                                <select name="city" lay-verify="" lay-search>
+                                    <option value="010">layer</option>
+                                    <option value="021">form</option>
+                                    <option value="0571" selected>layim</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">导游姓名：</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="guideName" autocomplete="off" class="layui-input" id="guideName">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">导游电话：</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="guidePhone" autocomplete="off" class="layui-input" id="guidePhone">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <div class="layui-input-inline">
+                                <span class="layui-btn"><span class="layui-icon layui-icon-add-circle"></span> 新建</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row white-bg spacing-padding">
+                    <div class="layui-form-title">
+                        <label for="" style="margin-right: 50px">选择票种</label>
+                    </div>
+                    <input type="checkbox" name="" title="多选" lay-skin="primary" id='isCheck'> 
+                        <div class="ticket-num spacing-padding-left">
+                            <div class="layui-inline">
+                                <span class="clear-weight">数量：</span>
+                                <div class="layui-input-inline">
+                                    <span class="layui-btn" id="minus">-</span>
+                                </div>
+                                <div class="layui-input-inline">
+                                    <input type="text" class="layui-input clear-weight inputNum" value="1">
+                                </div>
+                                <div class="layui-input-inline">
+                                    <span class="layui-btn" id="plus">+</span>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="layui-form-item spacing-padding-top single-ticket">
+                        <label class="layui-form-label spacing-marign-top">单票: &nbsp;</label>
+                        <div class="layui-inline">
+                            <div class="layui-input-inline">
+                                <div class="ticket-thumbnail">
+                                    <p class="ticket-title">泰勒斯威夫特演唱会</p>
+                                    <p class="ticket-price">
+                                        <span class="warning-color">￥15.00</span>
+                                        <b> &nbsp;&nbsp;( F1 )</b>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="layui-input-inline">
+                                <div class="ticket-thumbnail">
+                                    <p class="ticket-title">泰勒斯威夫特演唱会</p>
+                                    <p class="ticket-price">
+                                        <span class="warning-color">￥15.00</span>
+                                        <b> &nbsp;&nbsp;( F1 )</b>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="layui-input-inline">
+                                <div class="ticket-thumbnail">
+                                    <p class="ticket-title">泰勒斯威夫特演唱会</p>
+                                    <p class="ticket-price">
+                                        <span class="warning-color">￥15.00</span>
+                                        <b> &nbsp;&nbsp;( F1 )</b>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="layui-input-inline">
+                                <div class="ticket-thumbnail">
+                                    <p class="ticket-title">泰勒斯威夫特演唱会</p>
+                                    <p class="ticket-price">
+                                        <span class="warning-color">￥15.00</span>
+                                        <b> &nbsp;&nbsp;( F1 )</b>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="layui-input-inline">
+                                <div class="ticket-thumbnail">
+                                    <p class="ticket-title">泰勒斯威夫特演唱会</p>
+                                    <p class="ticket-price">
+                                        <span class="warning-color">￥15.00</span>
+                                        <b> &nbsp;&nbsp;( F1 )</b>
+                                    </p>
+                                </div>
+                            </div>
+                            <label class="layui-form-label spacing-marign-top">更多:</label>
+                            <div class="layui-input-inline" style="margin-top: 18px">
+                                <input type="text" id="selectSingleTicket" placeholder="请输入查询关键字">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item multi-ticket">
+                        <label class="layui-form-label spacing-marign-top">联票: &nbsp;</label>
+                        <div class="layui-inline">
+                            <div class="layui-input-inline">
+                                <div class="ticket-thumbnail">
+                                    <p class="ticket-title">泰勒斯威夫特演唱会</p>
+                                    <p class="ticket-price">
+                                        <span class="warning-color">￥15.00</span>
+                                        <b> &nbsp;&nbsp;( F1 )</b>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="layui-input-inline">
+                                <div class="ticket-thumbnail">
+                                    <p class="ticket-title">泰勒斯威夫特演唱会</p>
+                                    <p class="ticket-price">
+                                        <span class="warning-color">￥15.00</span>
+                                        <b> &nbsp;&nbsp;( F1 )</b>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="layui-input-inline">
+                                <div class="ticket-thumbnail">
+                                    <p class="ticket-title">泰勒斯威夫特演唱会</p>
+                                    <p class="ticket-price">
+                                        <span class="warning-color">￥15.00</span>
+                                        <b> &nbsp;&nbsp;( F1 )</b>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="layui-input-inline">
+                                <div class="ticket-thumbnail">
+                                    <p class="ticket-title">泰勒斯威夫特演唱会</p>
+                                    <p class="ticket-price">
+                                        <span class="warning-color">￥15.00</span>
+                                        <b> &nbsp;&nbsp;( F1 )</b>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="layui-input-inline">
+                                <div class="ticket-thumbnail">
+                                    <p class="ticket-title">泰勒斯威夫特演唱会</p>
+                                    <p class="ticket-price">
+                                        <span class="warning-color">￥15.00</span>
+                                        <b> &nbsp;&nbsp;( F1 )</b>
+                                    </p>
+                                </div>
+                            </div>
+                            <label class="layui-form-label spacing-marign-top">更多:</label>
+                            <div class="layui-input-inline" style="margin-top: 18px">
+                                <input type="text" id="selectMutiTicket" placeholder="请输入查询关键字">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="float-right">
+                        <span class="layui-btn">
+                            <i class="layui-icon layui-icon-cart-simple"></i> &nbsp;加入购物车</span>
+                    </div>
+                </div>
+                <div class="layui-row white-bg spacing-padding spacing-marign-top" style="padding-bottom: 0px">
+                    <div class="layui-form-title" style="margin-bottom: 10px">
+                       账户信息
+                        <div class="ticket-num spacing-padding-left">
+                            <div class="layui-inline">
+                                <div class="layui-input-inline">
+                                    <input type="radio" name="ticket" value="签单" title="签单" disabled>
+                                    <input type="radio" name="ticket" value="预存" title="预存" checked disabled>
+                                    <input type="radio" name="ticket" value="现付" title="现付"disabled>
+                                </div>
+                            </div>
+                            <div class=" layui-inline deposit-info">
+                                <div class="layui-inline spacing-padding-left">
+                                    账户余额：
+                                    <span class="danger-color">10.00</span> 元
+                                </div>
+                                <div class="layui-inline spacing-padding-left">
+                                    透支额度：
+                                    <span class="danger-color">10.00</span> 元
+                                </div>
+                                <div class="layui-inline spacing-padding-left">
+                                    可使用额度：
+                                    <span class="danger-color">10.00</span > 元
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row white-bg spacing-padding">
+                    <div class="layui-form-title" style="margin-bottom: 10px">
+                        购物车
+                        <a href="javacrcipt:;" id="clearCart">清空购物车</a>
+                    </div>
+                    <div class="layui-form-item">
+                        <div id="cart-table">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row white-bg spacing-padding spacing-marign-top">
+                    <div class="layui-form-title" style="margin-bottom: 10px">
+                        付款方式
+                    </div>
+                    <div class="layui-inline spacing-padding-left">
+                            <div class="layui-input-inline">
+
+                                <input type="radio" name="ticketPay" value="签单" title="签单">
+                                <input type="radio" name="ticketPay" value="预存" title="预存" checked>
+                                <input type="radio" name="ticketPay" value="现付" title="现付">
+                            </div>
+                        </div>
+                    <div class="layui-inline">
+                        <div class="layui-input-inline">
+                            <p class="ticket-pay">
+                                <span class="ticket-pay-cash">&nbsp;</span> 现金支付</p>
+                                  <p class="ticket-pay-checked">&nbsp;</p>
+                        </div>
+                        <div class="layui-input-inline">
+                            <p class="ticket-pay">
+                                <span class="ticket-pay-alipay">&nbsp;</span>支付宝</p>
+                        </div>
+                        <div class="layui-input-inline">
+                            <p class="ticket-pay">
+                                <span class="ticket-pay-wechat">&nbsp;</span>微信支付</p>
+                        </div>
+                        <div class="layui-input-inline">
+                            <p class="ticket-pay">
+                                <span class="ticket-pay-union">&nbsp;</span>银联支付</p>
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">收现：</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="price_min" placeholder="￥" autocomplete="off" class="layui-input" style="width: 100px;" id="checkout">
+                        </div>
+                        <div class="layui-input-inline deposit-info spacing-padding-left">
+                            找零：<span class="danger-color">0.00</span> 元
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row white-bg spacing-padding">
+                    <div class="layui-form-title">
+                        出票方式&nbsp;&nbsp;
+                    </div>
+                    <div class="layui-inline">
+                        <div class="layui-input-inline">
+                            <p class="ticket-pay" data-value="single">
+                                一票一客</p>
+                            <p class="ticket-pay-checked">&nbsp;</p>
+                        </div>
+                        <div class="layui-input-inline">
+                            <p class="ticket-pay" data-value="more">
+                                一票多客</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row white-bg spacing-padding">
+                    <div class="layui-form-title">
+                        客源地
+                    </div>
+                    <div class="layui-inline spacing-padding-left">
+                        <div class="layui-input-inline">
+                            <p class="ticket-pay" data-value="single">
+                                内宾</p>
+                            <p class="ticket-pay-checked">&nbsp;</p>
+                        </div>
+                        <div class="layui-input-inline">
+                            <p class="ticket-pay" data-value="more">
+                                外宾</p>
+                        </div>
+                    </div>
+                    <div class="layui-inline locaiton">
+                        <div class="layui-input-inline spacing-padding-left">
+                            地区: &nbsp;
+                            <input type="text" id="province"><input type="text" id="city"><input type="text" id="district">
+                        </div>
+                    </div>
+                </div>
+                <div class="ticket-printer">
+                    <button class="layui-btn"><i class="fa fa-print fa-lg" aria-hidden="true"></i> 打印出票</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+    <!-- 让IE8/9支持媒体查询， 从而兼容栅格 -->
+    <!--[if lt IE 9]>
+        <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+        <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    <script src="../../../common/tools/ligerui/lib/jquery/jquery-1.9.0.min.js"></script>
+    <script src="../../../common/tools/layui/layui.all.js"></script>
+    <script src="../../../common/tools/ligerui/lib/ligerUI/js/core/base.js"></script>
+  
+    <script src="../../../common/tools/ligerui/lib/ligerUI/js/plugins/ligerDialog.js" type="text/javascript"></script>
+    <script src="../../../common/tools/ligerui/lib/ligerUI/js/plugins/ligerTextBox.js" type="text/javascript"></script>
+    <script src="../../../common/tools/ligerui/lib/ligerUI/js/plugins/ligerCheckBox.js" type="text/javascript"></script>
+    <script src="../../../common/tools/ligerui/lib/ligerUI/js/plugins/ligerComboBox.js" type="text/javascript"></script>
+    <script src="../../../common/tools/ligerui/lib/ligerUI/js/plugins/ligerGrid.js" type="text/javascript"></script>
+    <script src="../../../common/tools/ligerui/lib/ligerUI/js/plugins/ligerDateEditor.js" type="text/javascript"></script>
+    <script src="../../../common/tools/ligerui/lib/ligerUI/js/plugins/ligerSpinner.js" type="text/javascript"></script>
+    <script src="../../../content/js/selectpage.min.js"></script>
+    <script src="../../../content/js/saleTickets.js"></script>
+</body>
+
+</html>

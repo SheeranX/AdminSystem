@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../../../common/global.css">
     <link rel="stylesheet" href="../../../content/css/layout.css">
     <link rel="stylesheet" href="../../../content/css/clientManage.css">
+    <link rel="stylesheet" href="../../../content/css/selectpage.css">
     <title>客户管理</title>
 </head>
 
@@ -53,37 +54,37 @@
                                         <div class="layui-inline">
                                             <label class="layui-form-label">登录账号：</label>
                                             <div class="layui-input-inline">
-                                                <input type="password" name="loginAccount" autocomplete="off" class="layui-input">
+                                                <input type="text" name="loginAccount" autocomplete="off" class="layui-input" id="selectPageSelectOnly">
                                             </div>
                                         </div>
                                         <div class="layui-inline">
                                             <label class="layui-form-label">登录账号：</label>
                                             <div class="layui-input-inline">
-                                                <input type="password" name="loginAccount" autocomplete="off" class="layui-input">
+                                                <input type="text" name="loginAccount" autocomplete="off" class="layui-input" id="selectPageSelectOnly1">
                                             </div>
                                         </div>
                                         <div class="layui-inline">
                                             <label class="layui-form-label">登录账号：</label>
                                             <div class="layui-input-inline">
-                                                <input type="password" name="loginAccount" autocomplete="off" class="layui-input">
+                                                <input type="text" name="loginAccount" autocomplete="off" class="layui-input" id="selectPageSelectOnly2">
                                             </div>
                                         </div>
                                         <div class="layui-inline">
                                             <label class="layui-form-label">登录账号：</label>
                                             <div class="layui-input-inline">
-                                                <input type="password" name="loginAccount" autocomplete="off" class="layui-input">
+                                                <input type="text" name="loginAccount" autocomplete="off" class="layui-input" id="selectPageSelectOnly3">
                                             </div>
                                         </div>
                                         <div class="layui-inline">
                                             <label class="layui-form-label">登录账号：</label>
                                             <div class="layui-input-inline">
-                                                <input type="password" name="loginAccount" autocomplete="off" class="layui-input">
+                                                <input type="text" name="loginAccount" autocomplete="off" class="layui-input" id="selectPageSelectOnly4">
                                             </div>
                                         </div>
                                         <div class="layui-inline">
                                             <label class="layui-form-label">登录账号：</label>
                                             <div class="layui-input-inline">
-                                                <input type="password" name="loginAccount" autocomplete="off" class="layui-input">
+                                                <input type="text" name="loginAccount" autocomplete="off" class="layui-input" id="selectPageSelectOnly5">
                                             </div>
                                         </div>
                                         <div class="layui-inline">
@@ -154,9 +155,13 @@
     <script src="../../../common/tools/layui/layui.all.js"></script>
     <script src="../../../common/tools/ligerui/lib/ligerUI/js/core/base.js"></script>
     <script src="../../../common/tools/ligerui/lib/ligerUI/js/plugins/ligerGrid.js"></script>
+    <script src="../../../common/tools/ligerui/lib/ligerUI/js/plugins/ligerResizable.js"></script>
     <script src="../../../common/tools/ligerui/lib/ligerUI/js/plugins/ligerDrag.js"></script>
     <script src="../../../content/js/jquery.dropdown.js"></script>
+    <script src="../../../content/js/selectpage.min.js"></script>
     <script src="../../../content/js/clientManage.js"></script>
 </body>
+<script>
 
+</script>
 </html>

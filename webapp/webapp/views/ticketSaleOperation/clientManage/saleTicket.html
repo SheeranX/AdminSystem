@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" class="layui-bg-gray">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../../common/tools/ligerui/lib/ligerUI/skins/Aqua/css/ligerui-all.css">
+    <link rel="stylesheet" href="../../../common/tools/ligerui/lib/ligerUI/skins/Gray/css/all.css">
+    <link rel="stylesheet" href="../../../common/tools/layui/css/layui.css">
+    <link rel="stylesheet" href="../../../common/tools/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../common/global.css">
+    <link rel="stylesheet" href="../../../content/css/saleTickets.css">
+    <link rel="stylesheet" href="../../../content/css/selectpage.css">
+    <title>散客票</title>
+</head>
+
+<body style="min-width: ;">
+    <div class="clientManage-container saleTicket">
+        <div class="layui-row">
+            <form class="clientManage-form layui-form">
+                <div class="layui-row white-bg spacing-padding">
+                    <div class="layui-form-title">
+                        <label for="" style="margin-right: 50px">选择票种</label>
+                        <input type="checkbox" name="" title="多选" lay-skin="primary" id='isCheck'> 
+                        <div class="ticket-num spacing-padding-left">
+                            <div class="layui-inline">
+                                <span class="clear-weight">数量：</span>
+                                <div class="layui-input-inline">
+                                    <span class="layui-btn" id="minus">-</span>
+                                </div>
+                                <div class="layui-input-inline">
+                                    <input type="text" class="layui-input clear-weight inputNum" value="1">
+                                </div>
+                                <div class="layui-input-inline">
+                                    <span class="layui-btn" id="plus">+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="left-ticket float-right">
+                        <p>
+                            <span>门票打印机：</span>
+                            <span>剩余约</span>
+                            <span class="danger-color">299</span>
+                            <span>张</span>
+                        </p>
+                    </div>
+                    <div class="layui-form-item spacing-padding-top single-ticket">
+                        <label class="layui-form-label spacing-marign-top">单票: &nbsp;</label>
+                        <div class="layui-inline" id="single_ticket">
+                            
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label spacing-marign-top">更多:</label>
+                            <div class="layui-input-inline" style="margin-top: 18px;width: 230px">
+                                <input type="text" id="selectSingleTicket" placeholder="请输入查询关键字">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item  multi-ticket">
+                        <label class="layui-form-label spacing-marign-top">联票: &nbsp;</label>
+                        <div class="layui-inline" id="muti_ticket">
+                            
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label spacing-marign-top">更多:</label>
+                            <div class="layui-input-inline" style="margin-top: 18px;width: 230px">
+                                <input type="text" id="selectMutiTicket" placeholder="请输入查询关键字">
+                            </div>
+                        </div>
+                        <div class="layui-inline spacing-padding-top" style="width: 200px;text-align: right">
+                                <span class="layui-btn">
+                                    <i class="layui-icon layui-icon-cart-simple"></i> &nbsp;加入购物车</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row white-bg spacing-padding spacing-marign-top">
+                    <div class="layui-form-title" style="margin-bottom: 10px">
+                        购物车
+                        <a href="javacrcipt:;" id="clearCart">清空购物车</a>
+                    </div>
+                    <div class="layui-form-item">
+                        <div id="cart-table">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row white-bg spacing-padding spacing-marign-top">
+                    <div class="layui-form-title">
+                        付款方式
+                    </div>
+                    <div class="layui-inline">
+                            <div class="layui-input-inline">
+                                <p class="ticket-pay">
+                                    <span class="ticket-pay-cash">&nbsp;</span> 现金支付</p>
+                                      <p class="ticket-pay-checked">&nbsp;</p>
+                            </div>
+                            <div class="layui-input-inline">
+                                <p class="ticket-pay">
+                                    <span class="ticket-pay-alipay">&nbsp;</span>支付宝</p>
+                            </div>
+                            <div class="layui-input-inline">
+                                <p class="ticket-pay">
+                                    <span class="ticket-pay-wechat">&nbsp;</span>微信支付</p>
+                            </div>
+                            <div class="layui-input-inline">
+                                <p class="ticket-pay">
+                                    <span class="ticket-pay-union">&nbsp;</span>银联支付</p>
+                            </div>
+                        </div>
+                </div>
+                <div class="layui-row white-bg spacing-padding" style="padding-top: 0px">
+                    <div class="layui-form-title">
+                        出票方式
+                    </div>
+                    <div class="layui-inline">
+                        <div class="layui-input-inline">
+                            <p class="ticket-pay" data-value="single">
+                                一票一客</p>
+                            <p class="ticket-pay-checked">&nbsp;</p>
+                        </div>
+                        <div class="layui-input-inline">
+                            <p class="ticket-pay" data-value="more">
+                                一票多客</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="ticket-printer">
+                    <button class="layui-btn"><i class="fa fa-print fa-lg" aria-hidden="true"></i> 打印出票</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+    <!-- 让IE8/9支持媒体查询， 从而兼容栅格 -->
+    <!--[if lt IE 9]>
+        <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+        <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    <script src="../../../common/tools/ligerui/lib/jquery/jquery-1.9.0.min.js"></script>
+    <script src="../../../common/tools/layui/layui.all.js"></script>
+    <script src="../../../common/tools/ligerui/lib/ligerUI/js/core/base.js"></script>
+  
+    <script src="../../../common/tools/ligerui/lib/ligerUI/js/plugins/ligerDialog.js" type="text/javascript"></script>
+    <script src="../../../common/tools/ligerui/lib/ligerUI/js/plugins/ligerTextBox.js" type="text/javascript"></script>
+    <script src="../../../common/tools/ligerui/lib/ligerUI/js/plugins/ligerCheckBox.js" type="text/javascript"></script>
+    <script src="../../../common/tools/ligerui/lib/ligerUI/js/plugins/ligerComboBox.js" type="text/javascript"></script>
+    <script src="../../../common/tools/ligerui/lib/ligerUI/js/plugins/ligerGrid.js" type="text/javascript"></script>
+    <script src="../../../common/tools/ligerui/lib/ligerUI/js/plugins/ligerDateEditor.js" type="text/javascript"></script>
+    <script src="../../../common/tools/ligerui/lib/ligerUI/js/plugins/ligerSpinner.js" type="text/javascript"></script>
+    <script src="../../../common/tools/ligerui/lib/ligerUI/js/plugins/ligerResizable.js" type="text/javascript"></script>
+    <script src="../../../content/js/selectpage.min.js"></script>
+    <script src="../../../content/js/saleTickets.js"></script>
+</body>
+
+</html>

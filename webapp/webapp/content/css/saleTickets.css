@@ -1,0 +1,154 @@
+.saleTicket{
+    min-width: 1340px;
+}
+.saleTicket .selected{
+    background: #ff4e1f!important;
+}
+.saleTicket .ticket-num{
+    display: inline-block;
+}
+.saleTicket .layui-radio-disbaled{
+    color: #3e3e3e!important;
+}
+.saleTicket .clear-weight{
+    font-weight: normal;
+}
+.saleTicket .spacing-padding{
+    padding: 20px;
+}
+.saleTicket .layui-form-title a{
+    font-weight: normal;
+    color: #5c90d2;
+    padding-left:50px;
+}
+.saleTicket .layui-form-title span{
+    font-weight: normal;
+}
+.saleTicket .layui-form-title div{
+    font-weight: normal;
+}
+.saleTicket .ticket-num input{
+    height: 24px;
+    text-align: center;
+    font-size: 14px;
+    width: 80px;
+    padding-left: 0px;
+    padding-top: 1px;
+}
+.saleTicket .ticket-num .layui-btn{
+    height: 24px;
+    width: 24px;
+    text-align: center;
+    padding: 0px;
+    border-radius: 2px!important;
+    line-height: 24px!important;
+    font-weight: normal;
+}
+.saleTicket .left-ticket {
+    margin-top: 10px;
+}
+.saleTicket .ticket-thumbnail{
+    width: 155px;
+    height: 64px;
+    background: #5c90d2;
+    border-radius: 4px;
+    color: #fff;    
+    font-size: 14px;
+    box-sizing: border-box;
+    padding: 10px 5px;
+    text-align: center;
+    transition: all .5s ease-in-out;
+}
+
+.saleTicket .ticket-thumbnail:hover{
+    cursor: pointer;
+}
+.saleTicket .multi-ticket .ticket-thumbnail{
+    background: #5dabce;
+    transition: all .5s ease-in-out;
+}
+.saleTicket .ticket-thumbnail .ticket-price{
+    font-weight: bold;
+    padding-top: 5px;
+}
+.saleTicket .ticket-cart span{
+    width: 144px;
+}
+
+.saleTicket .ticket-cart{
+    position: absolute;
+    display: inline-block;
+    right: -350px;
+    margin-top: 50px;
+}
+.saleTicket .ticket-pay{
+    width: 110px;
+    height: 40px;
+    border: 1px solid #c8c8c8;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: normal;
+    margin-left: 10px;
+    box-sizing: border-box;
+    line-height: 40px;
+}
+.saleTicket .ticket-pay span{
+    display: inline-block;
+    width: 36px;
+    background: url(../../common/images/xuebitu-20.png) no-repeat;
+    background-size: auto 30px;
+}
+.saleTicket .ticket-pay .ticket-pay-cash{
+    background-position: 12px 4px;
+}
+.saleTicket .ticket-pay .ticket-pay-alipay{
+    background-position: -21px 4px;
+}
+.saleTicket .ticket-pay .ticket-pay-wechat{
+    background-position: -54px 4px;
+}
+.saleTicket .ticket-pay .ticket-pay-union{
+    background-position: -90px 4px;
+}
+.saleTicket .ticket-pay-checked{
+    position: absolute;
+    width: 110px;
+    height: 40px;
+    background: url(../../common/images/kuang-20.png) no-repeat;
+    margin-top: -40px;
+    margin-left: 10px;
+}
+.saleTicket .ticket-printer{
+    position: absolute;
+    right: 20px;
+    margin-top: -50px;
+}
+.saleTicket .ticket-printer button{
+    width:300px; 
+    height: 40px;
+    letter-spacing: 3px;
+}
+
+.saleTicket .table-border{
+    border-left: 1px solid #c8c8c8;
+    border-right: 1px solid #c8c8c8;
+    width: 100px;
+}
+
+.saleTicket .deposit-info span{
+    font-weight: bold;
+    font-size: 18px;
+}
+.saleTicket .locaiton .sp_container .sp_input{
+    border-radius: 0px;
+}
+.saleTicket .locaiton .sp_container:first-child .sp_input{
+    border-radius: 4px 0px 0px 4px;
+    border-right: 0px;
+}
+.saleTicket .locaiton .sp_container:last-child .sp_input{
+    border-radius: 0px 4px 4px 0px;
+    border-left: 0px;
+}
+

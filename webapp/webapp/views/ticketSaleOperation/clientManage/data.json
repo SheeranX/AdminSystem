@@ -1,0 +1,102 @@
+{
+	"combinationTicketList": [{
+		"customPriceFlag": "Y",
+		"shortcutKey": "F1",
+		"ticketId": 200000005101,
+		"ticketName": "泰勒斯威夫特世界巡演",
+		"ticketSalePrice": "10.00",
+		"spotName":"鲁迅故里"
+	}, {
+		"customPriceFlag": "N",
+		"shortcutKey": "F2",
+		"ticketId": 200000005102,
+		"ticketName": "联票2",
+		"ticketSalePrice": "12.00",
+		"spotName":"大禹陵"
+	},{
+		"customPriceFlag": "Y",
+		"shortcutKey": "F3",
+		"ticketId": 200000005103,
+		"ticketName": "联票一",
+		"ticketSalePrice": "10.00",
+		"spotName":"香炉峰"
+	}, {
+		"customPriceFlag": "N",
+		"shortcutKey": "F4",
+		"ticketId": 200000005104,
+		"ticketName": "联票2",
+		"ticketSalePrice": "12.00",
+		"spotName":"兰亭"
+	},{
+		"customPriceFlag": "Y",
+		"shortcutKey": "F5",
+		"ticketId": 200000005105,
+		"ticketName": "联票一",
+		"ticketSalePrice": "10.00",
+		"spotName":"中央大街"
+	}, {
+		"customPriceFlag": "N",
+		"shortcutKey": "F6",
+		"ticketId": 200000005106,
+		"ticketName": "联票2",
+		"ticketSalePrice": "12.00",
+		"spotName":"圣索菲亚大教堂"
+	}],
+	"singleTicketList": [{
+		"customPriceFlag": "Y",
+		"shortcutKey": "F7",
+		"ticketId": 200000005114,
+		"ticketName": "单票1",
+		"ticketSalePrice": "10.00",
+		"spotName":"故宫博物院"
+	}, {
+		"customPriceFlag": "N",
+		"shortcutKey": "F8",
+		"ticketId": 200000005115,
+		"ticketName": "单票2",
+		"ticketSalePrice": "12.00",
+		"spotName":"艾菲尔铁塔"
+    },{
+		"customPriceFlag": "N",
+		"shortcutKey": "F9",
+		"ticketId": 200000005116,
+		"ticketName": "单票3",
+		"ticketSalePrice": "12.00",
+		"spotName":"优胜美地国家森林公园"
+    },{
+		"customPriceFlag": "N",
+		"shortcutKey": "F10",
+		"ticketId": 200000005119,
+		"ticketName": "单票4",
+		"ticketSalePrice": "10.00",
+		"spotName":"威尼斯"
+    },{
+		"customPriceFlag": "N",
+		"shortcutKey": "F11",
+		"ticketId": 200000005120,
+		"ticketName": "单票5",
+		"ticketSalePrice": "15.00",
+		"spotName":"泰姬陵"
+    },{
+		"customPriceFlag": "N",
+		"shortcutKey": "F12",
+		"ticketId": 200000005121,
+		"ticketName": "单票6",
+		"ticketSalePrice": "16.00",
+		"spotName":"帕特农神庙"
+	},{
+		"customPriceFlag": "N",
+		"shortcutKey": "",
+		"ticketId": 200000005122,
+		"ticketName": "单票5",
+		"ticketSalePrice": "15.00",
+		"spotName":"泰姬陵"
+    },{
+		"customPriceFlag": "N",
+		"shortcutKey": "",
+		"ticketId": 200000005123,
+		"ticketName": "梅赛德斯奔驰文化中心",
+		"ticketSalePrice": "16.00",
+		"spotName":"帕特农神庙"
+	}]
+}

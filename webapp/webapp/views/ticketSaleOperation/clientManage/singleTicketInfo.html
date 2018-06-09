@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../../common/tools/ligerui/lib/ligerUI/skins/Aqua/css/ligerui-all.css">
+    <link rel="stylesheet" href="../../../common/tools/layui/css/layui.css">
+    <link rel="stylesheet" href="../../../content/css/jquery.dropdown.css">
+    <link rel="stylesheet" href="../../../common/global.css">
+    <link rel="stylesheet" href="../../../content/css/layout.css">
+    <link rel="stylesheet" href="../../../content/css/selectpage.css">
+    <title>客户管理</title>
+</head>
+<style>
+    .ticket-info .ticket-info-table {
+        border: 1px solid #c8c8c8;
+    }
+
+    .ticket-info .ticket-info-table td {
+        border: 1px solid #c8c8c8;
+        text-align: center;
+        padding: 10px;
+        height: 40px;
+    }
+
+    .ticket-info .ticket-info-table tr {
+        height: 40px;
+    }
+
+    .ticket-info .ticket-info-table td:nth-child(2) {
+        width: 250px;
+    }
+
+    .ticket-info .ticket-info-table td:nth-child(1) {
+        width: 120px;
+        background: #edf4fa;
+    }
+
+    .ticket-info .ticket-info-table td:nth-child(3) {
+        background: #ededed;
+    }
+    .ztree{
+        width: 200px;
+        height: 220px;
+        border: 1px solid #c8c8c8;
+        overflow: auto;
+    }
+    .price-type-table input{
+        margin:0 auto;
+    }
+    .price-type-table td:nth-child(1){
+        background: #edf4fa;
+        width: 80px;
+    }
+</style>
+
+<body class="white-bg ticket-info">
+    <div class="clientManage-container layui-fluid">
+        <div class="layui-row">
+            <div class="layui-form-title">
+                <label for="" style="margin-right: 50px">单票信息</label>
+            </div>
+            <form action="" class="clientManage-form layui-form">
+                <div class="layui-form-item spacing-padding">
+                    <table class="ticket-info-table" cellpadding='0' cellspacing='0'>
+                        <tr>
+                            <td>
+                                <span class="layui-form-x">*</span> 所属景区:</td>
+                            <td>
+                                <input type="text" id="spotArea" class="layui-input">
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="layui-form-x">*</span>所属景点:</td>
+                            <td>
+                                <input type="text" id="spot" class="layui-input">
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="layui-form-x">*</span> 票种分组:</td>
+                            <td>
+                                <input type="text" class="layui-input" id="ticketGroup">
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="layui-form-x">*</span> 票种分组属性:</td>
+                            <td>
+                                <input type="text" class="layui-input" id="ticketGroupProp">
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="layui-form-x">*</span> 单票名称:</td>
+                            <td>
+                                <input type="text" autocomplete="off" class="layui-input">
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="layui-form-x">*</span> 票种编号:</td>
+                            <td>
+                                <input type="text" autocomplete="off" class="layui-input layui-input-readonly" readonly>
+                            </td>
+                            <td>
+                                <span> 注：自动生成，每一种票有唯一的编号</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="layui-form-x">*</span> 核定价:</td>
+                            <td>
+                                <input type="text" autocomplete="off" class="layui-input">
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="layui-form-x">*</span> 门市价:</td>
+                            <td>
+                                <input type="text" autocomplete="off" class="layui-input">
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" lay-skin="primary" title="自定义票价" checked="">
+                            </td>
+                            <td>
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">价格区间：</label>
+                                    <div class="layui-input-inline" style="width: 50px">
+                                        <input type="text" name="price_min" autocomplete="off" class="layui-input">
+                                    </div>
+                                    <div class="layui-form-mid">至</div>
+                                    <div class="layui-input-inline" style="width: 50px">
+                                        <input type="text" name="price_max" autocomplete="off" class="layui-input" style="width: 50px">
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                注：联票不设置自定义价格
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="layui-form-x">*</span> 分成价:</td>
+                            <td>
+                                <input type="text" autocomplete="off" class="layui-input">
+                            </td>
+                            <td> 注：各景点分成价总价不能高于门市价</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="layui-form-x">*</span> 退票价:</td>
+                            <td>
+                                <input type="text" autocomplete="off" class="layui-input">
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="layui-form-x">*</span> 通行次数:
+                            </td>
+                            <td>
+                                <input type="text" autocomplete="off" class="layui-input">
+                            </td>
+                            <td> 注：每张票可通过闸机的次数</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="layui-form-x">*</span> 有效人数:</td>
+                            <td>
+                                <input type="text" autocomplete="off" class="layui-input">
+                            </td>
+                            <td>
+                                注：每张票可通过闸机的有效人数
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="layui-form-x">*</span> 有效天数:</td>
+                            <td>
+                                <input type="text" autocomplete="off" class="layui-input">
+                            </td>
+                            <td> 注：每张票可游览的有效天数</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="layui-form-x">*</span>销售网络:</td>
+                            <td>
+                                <input type="text" autocomplete="off" class="layui-input" id="saleNetwork">
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="layui-form-x">*</span> 打印出票:</td>
+                            <td>
+                                <input type="text" autocomplete="off" class="layui-input" id="isPrint">
+                            </td>
+                            <td> 注：选择"是"，则选择打印纸制票，"否"，则不打印</td>
+                        </tr>
+                        <tr>
+                            <td>购票证件类型:</td>
+                            <td>
+                                <input type="text" autocomplete="off" class="layui-input" id="cardType">
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="layui-form-x">*</span>闸机语音:</td>
+                            <td>
+                                <input type="text" autocomplete="off" class="layui-input" id="voiceType">
+                            </td>
+                            <td> 注：选择"是"，则选择打印纸制票，"否"，则不打印</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="layui-form-x">*</span>状态:</td>
+                            <td>
+                                <input type="text" autocomplete="off" class="layui-input" id="status">
+                            </td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="layui-form-title">
+                    <label for="" style="margin-right: 50px">检票控制</label>
+                </div>
+                <div class="layui-form-item spacing-padding">
+                    <div class="layui-form-label"> <span class="layui-form-x">*</span>通行闸机:</div>
+                    <div class="layui-input-block">
+                        <div class="ztree">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-title">
+                    <label for="" style="margin-right: 50px">附表一：票种价格</label>
+                </div>
+                <div class="layui-form-item spacing-padding">
+                <div class="layui-row">
+                    <div class="layui-col-sm3 layui-col-xs3">
+                        门市价：100
+                    </div>
+                    <div class="layui-col-sm3 layui-col-xs3">
+                        门票价：100
+                    </div>
+                </div>
+                <div class="layui-row">
+                    <table class="layui-table price-type-table">
+                        <tr>
+                            <td>景点名称</td>
+                            <td>分成价</td>
+                            <td>退票价</td>
+                            <td>通行次数</td>
+                        </tr>
+                        <tr>
+                            <td>文字博物馆</td>
+                            <td>
+                                <input type="text" name="" id="" class="layui-input">
+
+                            </td>
+                            <td>
+                                <input type="text" name="" id="" class="layui-input">
+                            </td>
+                            <td>
+                                <input type="text" name="" id="" class="layui-input">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>两栖馆</td>
+                            <td>
+                                <input type="text" name="" id="" class="layui-input">
+                            </td>
+                            <td>
+                                <input type="text" name="" id="" class="layui-input">
+                            </td>
+                            <td>
+                                <input type="text" name="" id="" class="layui-input">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- 让IE8/9支持媒体查询， 从而兼容栅格 -->
+    <!--[if lt IE 9]>
+        <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+        <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    <script src="../../../common/tools/ligerui/lib/jquery/jquery-1.9.0.min.js"></script>
+    <script src="../../../common/tools/layui/layui.all.js"></script>
+    <script src="../../../common/tools/ligerui/lib/ligerUI/js/core/base.js"></script>
+    <script src="../../../common/tools/ligerui/lib/ligerUI/js/plugins/ligerGrid.js"></script>
+    <script src="../../../common/tools/ligerui/lib/ligerUI/js/plugins/ligerResizable.js"></script>
+    <script src="../../../common/tools/ligerui/lib/ligerUI/js/plugins/ligerDrag.js"></script>
+    <script src="../../../content/js/jquery.dropdown.js"></script>
+    <script src="../../../content/js/selectpage.min.js"></script>
+</body>
+<script>
+    var data = { Rows: [{ "ProductID": 1, "ProductName": "Chai", "SupplierID": 1, "CategoryID": 1, "QuantityPerUnit": "10 boxes x 20 bags", "UnitPrice": 18, "UnitsInStock": 39, "UnitsOnOrder": 0, "ReorderLevel": 10, "Discontinued": false, "EAN13": "070684900001" }, { "ProductID": 2, "ProductName": "Chang", "SupplierID": 1, "CategoryID": 1, "QuantityPerUnit": "24 - 12 oz bottles", "UnitPrice": 19, "UnitsInStock": 17, "UnitsOnOrder": 40, "ReorderLevel": 25, "Discontinued": false, "EAN13": "070684900002" }, { "ProductID": 3, "ProductName": "Aniseed Syrup", "SupplierID": 1, "CategoryID": 2, "QuantityPerUnit": "12 - 550 ml bottles", "UnitPrice": 10, "UnitsInStock": 13, "UnitsOnOrder": 70, "ReorderLevel": 25, "Discontinued": false, "EAN13": "070684900003" }, { "ProductID": 4, "ProductName": "Chef Anton's Cajun Seasoning", "SupplierID": 2, "CategoryID": 2, "QuantityPerUnit": "48 - 6 oz jars", "UnitPrice": 22, "UnitsInStock": 53, "UnitsOnOrder": 0, "ReorderLevel": 0, "Discontinued": false, "EAN13": "070684900004" }, { "ProductID": 5, "ProductName": "Chef Anton's Gumbo Mix", "SupplierID": 2, "CategoryID": 2, "QuantityPerUnit": "36 boxes", "UnitPrice": 21.35, "UnitsInStock": 0, "UnitsOnOrder": 0, "ReorderLevel": 0, "Discontinued": true, "EAN13": "070684900005" }, { "ProductID": 6, "ProductName": "Grandma's Boysenberry Spread", "SupplierID": 3, "CategoryID": 2, "QuantityPerUnit": "12 - 8 oz jars", "UnitPrice": 25, "UnitsInStock": 120, "UnitsOnOrder": 0, "ReorderLevel": 25, "Discontinued": false, "EAN13": "070684900006" }, { "ProductID": 7, "ProductName": "Uncle Bob's Organic Dried Pears", "SupplierID": 3, "CategoryID": 7, "QuantityPerUnit": "12 - 1 lb pkgs.", "UnitPrice": 30, "UnitsInStock": 15, "UnitsOnOrder": 0, "ReorderLevel": 10, "Discontinued": false, "EAN13": "070684900007" }, { "ProductID": 8, "ProductName": "Northwoods Cranberry Sauce", "SupplierID": 3, "CategoryID": 2, "QuantityPerUnit": "12 - 12 oz jars", "UnitPrice": 40, "UnitsInStock": 6, "UnitsOnOrder": 0, "ReorderLevel": 0, "Discontinued": false, "EAN13": "070684900008" }, { "ProductID": 9, "ProductName": "Mishi Kobe Niku", "SupplierID": 4, "CategoryID": 6, "QuantityPerUnit": "18 - 500 g pkgs.", "UnitPrice": 97, "UnitsInStock": 29, "UnitsOnOrder": 0, "ReorderLevel": 0, "Discontinued": true, "EAN13": "070684900009" }, { "ProductID": 10, "ProductName": "Ikura", "SupplierID": 4, "CategoryID": 8, "QuantityPerUnit": "12 - 200 ml jars", "UnitPrice": 31, "UnitsInStock": 31, "UnitsOnOrder": 0, "ReorderLevel": 0, "Discontinued": false, "EAN13": "070684900010" }], Total: 77 };
+    $('#spotArea').selectPage({
+        showField: 'QuantityPerUnit',
+        keyField: 'ProductID',
+        data: data.Rows || [],
+        //启用多选模式
+        multiple: true,
+        pagination: false,
+        listSize: 5,
+        multipleControlbar: false
+    });
+    $('#spot').selectPage({
+        showField: 'QuantityPerUnit',
+        keyField: 'ProductID',
+        data: data.Rows || [],
+        //启用多选模式
+        multiple: false,
+        pagination: false,
+        listSize: 5,
+        multipleControlbar: false
+    });
+    $('#ticketGroup').selectPage({
+        showField: 'QuantityPerUnit',
+        keyField: 'ProductID',
+        data: data.Rows || [],
+        //启用多选模式
+        multiple: false,
+        pagination: false,
+        listSize: 5,
+        multipleControlbar: false
+    });
+    $('#ticketGroupProp').selectPage({
+        showField: 'QuantityPerUnit',
+        keyField: 'ProductID',
+        data: data.Rows || [],
+        //启用多选模式
+        multiple: false,
+        pagination: false,
+        listSize: 5,
+        multipleControlbar: false
+    });
+    $('#saleNetwork').selectPage({
+        showField: 'QuantityPerUnit',
+        keyField: 'ProductID',
+        data: data.Rows || [],
+        //启用多选模式
+        multiple: false,
+        pagination: false,
+        listSize: 5,
+        multipleControlbar: false
+    });
+    $('#isPrint').selectPage({
+        showField: 'QuantityPerUnit',
+        keyField: 'ProductID',
+        data: data.Rows || [],
+        //启用多选模式
+        multiple: false,
+        pagination: false,
+        listSize: 5,
+        multipleControlbar: false
+    });
+
+    $('#cardType').selectPage({
+        showField: 'QuantityPerUnit',
+        keyField: 'ProductID',
+        data: data.Rows || [],
+        //启用多选模式
+        multiple: false,
+        pagination: false,
+        listSize: 5,
+        multipleControlbar: false
+    });
+    $('#voiceType').selectPage({
+        showField: 'QuantityPerUnit',
+        keyField: 'ProductID',
+        data: data.Rows || [],
+        //启用多选模式
+        multiple: false,
+        pagination: false,
+        listSize: 5,
+        multipleControlbar: false
+    });
+    $('#status').selectPage({
+        showField: 'QuantityPerUnit',
+        keyField: 'ProductID',
+        data: data.Rows || [],
+        //启用多选模式
+        multiple: false,
+        pagination: false,
+        listSize: 5,
+        multipleControlbar: false
+    });
+</script>
+
+</html>
