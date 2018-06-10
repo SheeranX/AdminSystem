@@ -40,7 +40,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="layui-row layout-minwidth full-height">
+            <div style="position: fixed;height: 100%;">
                 <div class="layout-nav float-left">
                     <div class="layout-navtop">
                         <div id="layout-mini" style="border-bottom:1px solid rgba(255,255,255,.1)">
@@ -529,23 +529,37 @@
                         </ul>
                     </div>
                 </div>
+            </div>
+            <div class="position:fixed;left: 180px">
                 <div class="layout-content spacing-margin">
                     <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
                         <ul class="layui-tab-title">
                             <li class="layui-this">网站设置</li>
-                            <li><a  href="../views/userManage/userManage.html" target="childMenu">用户管理</a></li>
-                            <li><a href="../views/userManage/permissions.html" target="childMenu">权限分配</a></li>
-                            <li><a href="../views/userManage/authorization.html" target="childMenu">商品管理</a></li>
-                            <li><a href="../views/ticketSaleOperation/clientManage/clientManage.html"  target="childMenu">订单管理</a></li>
+                            <li>
+                                <a href="../views/userManage/userManage.html" target="childMenu">用户管理</a>
+                            </li>
+                            <li>
+                                <a href="../views/userManage/permissions.html" target="childMenu">权限分配</a>
+                            </li>
+                            <li>
+                                <a href="../views/userManage/authorization.html" target="childMenu">商品管理</a>
+                            </li>
+                            <li>
+                                <a href="../views/ticketSaleOperation/clientManage/clientManage.html" target="childMenu">订单管理</a>
+                            </li>
                         </ul>
-                        <div class="layui-tab-content">
-                            <iframe frameborder="0" height="99%" width="100%" scrolling="no" name="childMenu" src="../views/default.html" id="childMenu"></iframe>
-                        </div>
+                      
                     </div>
                     <span class="toolTip"> </span>
-                    <footer class="txt-align-center layout-copyright">上海大漠电子科技股份有限公司版权所有</footer>
                 </div>
-        </div>
+            </div>
+            <div class="layui-tab-content">
+                <iframe frameborder="0" height="100%" width="100%" scrolling="no" name="childMenu" src="../views/default.html" id="childMenu"></iframe>
+            </div>
+            <div class="layui-row layout-minwidth full-height">
+               
+            </div>
+            <footer class="txt-align-center layout-copyright">上海大漠电子科技股份有限公司版权所有</footer>
         </div>
         <!-- 让IE8/9支持媒体查询， 从而兼容栅格 -->
         <!--[if lt IE 9]>

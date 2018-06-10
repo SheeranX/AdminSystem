@@ -75,11 +75,15 @@
                 $('.layout-nav-scroll>ul').css('width', '80');
                 $('.layout-nav-scroll').css('width', '60');
                 $('.layout-mini-icon').addClass('layout-mini-icon-toggle');
+                $('.content-nav').css('left','60px');
+                $('.layout-content1').css('left','60px');
             } else {
                 $('.layout-nav').removeClass('layout-navmini');
                 $('.layout-mini-icon').removeClass('layout-mini-icon-toggle');
                 $('.layout-nav-scroll>ul').css('width', '200');
                 $('.layout-nav-scroll').css('width', '180');
+                $('.content-nav').css('left','180px');
+                $('.layout-content1').css('left','180px');
             }
         });
 
